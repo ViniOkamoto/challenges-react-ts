@@ -18,12 +18,18 @@
   --primary-purple: #8284FA;
   --primary-purple-dark: #5E60CE;
   --primary-blue: #4EA8DE;
-  --primary-purple: #1E6F9F;
+  --primary-blue-dark: #1E6F9F;
 
+}
+
+@media (max-width: 768px) {
+  html {
+      font-size: 87.5%;
+  }
 }
 :focus{
   outline: transparent;
-  box-shadow: 0 0 0 2px var(--green-500);
+  box-shadow: 0 0 0 0;
 }
 
 * {
