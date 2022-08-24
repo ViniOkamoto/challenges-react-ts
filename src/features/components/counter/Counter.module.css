@@ -1,0 +1,26 @@
+.counter {
+    display: flex;
+    justify-content: center;   
+    gap: 0.5rem;
+}
+
+.counter strong:first-child {
+    font-size: 0.875rem;
+}
+
+.counter strong:last-child {
+    font-size: 0.75rem;
+    border-radius: 45%;
+    padding: 0.125rem 0.5rem;
+    color: var(--gray-200);
+    background: var(--gray-400);
+}
+
+.listCounter {
+    color: var(--primary-blue);
+}
+
+.concludedCounter {
+    color: var(--primary-purple);
+
+}
