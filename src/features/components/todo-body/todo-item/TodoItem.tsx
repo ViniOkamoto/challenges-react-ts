@@ -7,6 +7,7 @@ export function TodoItem() {
         <div className={styles.todoBox}>
    
         <ul>
+          <li>
           <label className={styles.container}>
               <input
                 type="checkbox"
@@ -16,10 +17,10 @@ export function TodoItem() {
               />
               <span className={styles.checkmark}></span>
           </label>
-  
+          </li>
               <li> 
   
-              <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+              <p>Integer  aaa aaa  aopskdopaksdop  aspdkaposkdpoa aaaaaaaaaaaaaaaaaaaaaaaasjdoifjasoidfjoaisjdfoiaj interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
   
               </li>
               

@@ -9,7 +9,7 @@ interface Task {
     done: boolean;
 }
 
-const mockTasks:Task[] =[
+const mockTasks:Task[] = [
     {
         description:"teste",
         done: false,
@@ -23,6 +23,10 @@ const mockTasks:Task[] =[
         done: false,
     }
 ]
+
+const renderedTaks = mockTasks.map((e)=> {
+    return <TodoItem/>;
+})
 export function TodoList() {
     const [tasks, setTasks] = useState(mockTasks);
     const hasTasks = tasks.length;
@@ -40,7 +44,7 @@ export function TodoList() {
                     type={"concluded"} />
 
             </header>
-            {hasTasks ? <TodoItem/>: <EmptyList/>}
+            {hasTasks ? renderedTaks : <EmptyList/>}
            
         </div>
     );
