@@ -1,10 +1,14 @@
+
 .wrapper{
     max-width: 46rem;
     margin: 0 auto;
     margin-top: -1.75rem;
-    padding: 0 1rem;
 }
-
+@media (max-width: 768px){
+    .wrapper{
+        padding: 0 2rem;
+    }
+}
 .todoList {
     margin-top: 4rem;
 }
