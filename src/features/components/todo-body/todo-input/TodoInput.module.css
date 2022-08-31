@@ -37,8 +37,15 @@ form button {
     gap: 0.5rem;
     line-height: 0;
     border: 0;
+    transition: 0.5s opacity;
 }
 
-form button:hover  {
+form button:not(:disabled):hover  {
     background: var(--primary-blue);
+    
+}
+
+form button:disabled  {
+    opacity: 0.7;
+    cursor: not-allowed;
 }

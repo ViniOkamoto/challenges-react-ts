@@ -5,27 +5,32 @@ import { TaskInterface } from "../../interfaces/TaskInterface";
 import { TodoItem } from "./todo-item/TodoItem";
 import { Counter } from "../counter/Counter";
 import { EmptyList } from "../empty-list/EmptyList";
+import { v4 as uuidv4 } from 'uuid';
 
 
 export function TodoBody() {
     const [tasks, setTasks] = useState<TaskInterface[]>([]);
     function handleInputSubmit(task:string){
-        console.log(task);
+
+        const idRandom = 
         setTasks([...tasks,{
+            id:uuidv4(),
             description: task,
-            done: false,
+            isDone: false,
         }])
     }
     const hasTasks = tasks.length > 0;
     
     const renderedTaks = tasks.map((e)=> {
         return <TodoItem 
-        key={e.description} 
+        key={e.id} 
         task={e} 
         onDeleteTask={onDeleteTask} 
-        onCheckTask={()=>{}}
+        onCheckTask={onCheckTask}
         />;
     })
+    const tasksQuantity:number = tasks.length
+    const concludedTasksQuantity:number = tasks.filter((task) => task.isDone == true).length;
 
     function onDeleteTask(taskToDelete:TaskInterface){
         const newTasksList:TaskInterface[] = tasks.filter(task =>{
@@ -34,8 +39,14 @@ export function TodoBody() {
 
         setTasks(newTasksList);
     }
-    const tasksQuantity:number = tasks.length
-    const concludedTasksQuantity:number = tasks.filter((task) => task.done == true).length;
+    function onCheckTask(id:string){
+        const newTaskList = tasks.map(task => task.id === id ? {
+            ...task,
+            isDone: !task.isDone
+          } : task); 
+          setTasks(newTaskList);
+    }
+    
     return(
         <div className={styles.wrapper}>
             <TodoInput handleSubmit={handleInputSubmit}/>
