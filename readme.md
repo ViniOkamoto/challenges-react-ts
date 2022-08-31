@@ -1,6 +1,6 @@
 <div align="center">
   <a>
-    <img src="readme-resources/logo.png" alt="logo" width="80" height="80">
+    <img src="readme-resources/logo.png" alt="logo" width="100" >
   </a>
 
   <h2 align="center">Challenges in React TS</h3>
