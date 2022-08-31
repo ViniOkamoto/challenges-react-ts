@@ -5,8 +5,8 @@ import { TodoBody } from './features/components/todo-body/TodoBody'
 function App() {
   return (
     <div >
-      <Header/>
-      <TodoBody/>
+      <Header />
+      <TodoBody />
     </div>
   )
 }
