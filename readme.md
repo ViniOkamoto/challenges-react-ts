@@ -12,8 +12,10 @@
 </div>
 
 ### Rocket Todo
-A simple TODO list for study purposes. [Source code](https://github.com/ViniOkamoto/challenges-react-ts/tree/master/rocket-todo)
 
 <a href="https://github.com/ViniOkamoto/challenges-react-ts/tree/master/rocket-todo">
   <img src="readme-resources/rocket-todo.svg" alt="logo" width="80" height="80">
 </a>
+
+A simple TODO list for study purposes. [Source code](https://github.com/ViniOkamoto/challenges-react-ts/tree/master/rocket-todo)
+
