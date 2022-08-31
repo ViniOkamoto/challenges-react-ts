@@ -19,8 +19,21 @@ export function TodoBody() {
     const hasTasks = tasks.length > 0;
     
     const renderedTaks = tasks.map((e)=> {
-        return <TodoItem key={e.description}/>;
+        return <TodoItem 
+        key={e.description} 
+        task={e} 
+        onDeleteTask={onDeleteTask} 
+        onCheckTask={()=>{}}
+        />;
     })
+
+    function onDeleteTask(taskToDelete:TaskInterface){
+        const newTasksList:TaskInterface[] = tasks.filter(task =>{
+            return task != taskToDelete;
+        });
+
+        setTasks(newTasksList);
+    }
     const tasksQuantity:number = tasks.length
     const concludedTasksQuantity:number = tasks.filter((task) => task.done == true).length;
     return(

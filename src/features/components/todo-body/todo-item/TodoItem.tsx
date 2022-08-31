@@ -1,9 +1,18 @@
 import { Trash } from "phosphor-react";
+import { TaskInterface } from "../../../interfaces/TaskInterface";
 import styles from "./TodoItem.module.css"
 
-
-export function TodoItem() {
-    return (
+interface TodoItemProps{
+  task: TaskInterface;
+  onDeleteTask: (task:TaskInterface) => void;
+  onCheckTask: (task:TaskInterface) => void;
+}
+export function TodoItem({task,onDeleteTask, onCheckTask}:TodoItemProps) {
+  function handleDeleteButton(){
+    onDeleteTask(task);
+  }  
+  
+  return (
         <div className={styles.todoBox}>
    
         <ul>
@@ -18,13 +27,16 @@ export function TodoItem() {
               <span className={styles.checkmark}></span>
           </label>
           </li>
-              <li> 
+              <li className={styles.description}> 
   
-              <p>Integer  aaa aaa  aopskdopaksdop  aspdkaposkdpoa aaaaaaaaaaaaaaaaaaaaaaaasjdoifjasoidfjoaisjdfoiaj interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+              <p>{task.description}</p>
   
               </li>
               
-              <button type="button" data-testid="remove-task-button" onClick={() => {}}>
+              <button 
+              type="button" 
+              title="Delete Button"
+              onClick={handleDeleteButton}>
                 <Trash size={20}/>
               </button>
     

@@ -19,13 +19,16 @@ button {
 ul {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
     width: 100%;
     list-style: none;
 }
 
-ul li p {
+.description {
+    width: 100%;
     margin: 0 0.75rem;
+}
+
+.description p {
     word-break: break-all;
     color: var(--gray-100);
 }
