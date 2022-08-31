@@ -13,3 +13,9 @@
     display: flex;
     justify-content: space-between;
 }
+
+.todoList ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
