@@ -4,3 +4,12 @@
     margin-top: -1.75rem;
     padding: 0 1rem;
 }
+
+.todoList {
+    margin-top: 4rem;
+}
+
+.todoList header {
+    display: flex;
+    justify-content: space-between;
+}
