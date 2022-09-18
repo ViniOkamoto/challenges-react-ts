@@ -17,5 +17,5 @@
   <img src="readme-resources/rocket-todo.svg" alt="logo" width="80" height="80">
 </a>
 
-A simple TODO list for study purposes. [Source code](https://github.com/ViniOkamoto/challenges-react-ts/tree/master/rocket-todo)
+Helpful TODO web application with state control/form/componentization and more! [Source code](https://github.com/ViniOkamoto/challenges-react-ts/tree/master/rocket-todo)
 
