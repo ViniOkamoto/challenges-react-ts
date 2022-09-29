@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { RobotoRegularFont } from './typography'
 
 export const GlobalStyle = createGlobalStyle`
     *{
@@ -10,11 +11,7 @@ export const GlobalStyle = createGlobalStyle`
         outline: 0;
         box-shadow: none;
         
-    }
-    ::-webkit-scrollbar {
-        height: 8px; 
-        width: 8px; 
-    }
+    } 
 
     
     @media (max-width: 640px) {
@@ -23,13 +20,12 @@ export const GlobalStyle = createGlobalStyle`
     }
     }
     body {
-        background: ${(props) => props.theme.backgrorund};
-        color:  ${(props) => props.theme['base-text']};
+        background: ${(props) => props.theme.color.backgrorund};
+        color:  ${(props) => props.theme.color['base-text']};
         -webkit-font-smoothing: antialiased;
     }
     body, input, textarea, button{
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
+        ${RobotoRegularFont}
         font-size: 1rem;
     }
 `

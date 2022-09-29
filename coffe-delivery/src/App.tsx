@@ -6,7 +6,7 @@ import { GlobalStyle } from './shared/theme/global'
 
 function App() {
   return (
-    <BrowserRouter basename="/coffee-delivery/">
+    <BrowserRouter>
       <ThemeProvider theme={defaultTheme}>
         <Router />
         <GlobalStyle />
