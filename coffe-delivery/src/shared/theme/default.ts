@@ -55,7 +55,10 @@ export const defaultTheme = {
       buttonG: '0.875em',
       buttonS: '0.75em',
     },
-  },
+  } as const,
 } as const
 
 export type ColorType = keyof typeof defaultTheme.color
+
+export type RobotoFontWeightType =
+  keyof typeof defaultTheme.typography.roboto.weight

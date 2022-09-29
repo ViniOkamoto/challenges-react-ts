@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { RobotoRegularFont } from './typography'
+import { RobotoFont } from './typography'
 
 export const GlobalStyle = createGlobalStyle`
     *{
@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
     }
     body, input, textarea, button{
-        ${RobotoRegularFont}
+        ${RobotoFont}
         font-size: 1rem;
     }
 `
