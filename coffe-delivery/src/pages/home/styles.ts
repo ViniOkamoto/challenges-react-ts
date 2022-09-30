@@ -1,10 +1,25 @@
 import styled from 'styled-components'
+import imageBackground from '../../assets/home/background.svg'
+import { rgba } from 'polished'
 
 export const HomeContainer = styled.div``
 
+export const HeroBackground = styled.div`
+  background: ${({ theme }) => `url(${imageBackground}) no-repeat center,
+      linear-gradient(
+        0deg,
+        ${theme.color.background} 25%,
+        ${rgba(theme.color.background, 0.2)} 50%,
+        ${theme.color.background} 25%
+      )`};
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  padding: 6rem 0;
+`
+
 export const HeroContainer = styled.div`
   width: 100%;
-  margin-top: 6rem;
   display: flex;
   justify-content: center;
   align-items: flex-start;
