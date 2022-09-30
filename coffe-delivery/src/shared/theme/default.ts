@@ -44,7 +44,6 @@ export const defaultTheme = {
       xs: '1.125em',
     },
     text: {
-      xl: '1.25em',
       l: '1.25em',
       m: '1em',
       s: '0.875em',

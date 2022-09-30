@@ -15,12 +15,9 @@ export default function Header() {
           <MapPin size={22} weight="fill" />
           <TextS color="purple-dark"> Winnipeg, CA</TextS>
         </LocationButton>
-        <div>
-          <NavLink to="/history" title="History button nav">
-            <ShoppingCart size={24} weight="fill" />
-            <ShopCartCounter>3</ShopCartCounter>
-          </NavLink>
-        </div>
+        <NavLink to="/history" title="History button nav">
+          <ShoppingCart size={24} weight="fill" />
+        </NavLink>
       </nav>
     </HeaderContainer>
   )
