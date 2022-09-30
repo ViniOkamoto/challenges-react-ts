@@ -12,7 +12,7 @@ export const BalooBoldFont = styled.h1<TextProps>`
   color: ${(props) =>
     props.color
       ? props.theme.color[`${props.color}`]
-      : props.theme.color['base-text']};
+      : props.theme.color['base-title']};
 `
 export const BalooExtraBoldFont = styled.h1<TextProps>`
   font-family: ${(props) => props.theme.typography.baloo['font-family']};
@@ -21,7 +21,7 @@ export const BalooExtraBoldFont = styled.h1<TextProps>`
   color: ${(props) =>
     props.color
       ? props.theme.color[`${props.color}`]
-      : props.theme.color['base-text']};
+      : props.theme.color['base-title']};
 `
 
 export const RobotoFont = styled.p<TextProps>`
@@ -53,10 +53,6 @@ export const TitleS = styled(BalooBoldFont)`
 
 export const TitleXS = styled(BalooBoldFont)`
   font-size: ${(props) => props.theme.typography.title.xs};
-`
-
-export const TextXL = styled(RobotoFont)`
-  font-size: ${(props) => props.theme.typography.text.xl};
 `
 export const TextL = styled(RobotoFont)`
   font-size: ${(props) => props.theme.typography.text.l};
