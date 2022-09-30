@@ -16,8 +16,9 @@ export const GlobalStyle = createGlobalStyle`
     
     @media (max-width: 640px) {
     html {
-        font-size: 70%;
+        font-size: 80%;
     }
+
     }
     body {
         background: ${(props) => props.theme.color.backgrorund};
