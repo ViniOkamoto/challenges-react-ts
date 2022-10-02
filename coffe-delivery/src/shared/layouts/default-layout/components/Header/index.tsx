@@ -3,6 +3,7 @@ import coffeDelivery from '../../../../../assets/logo.png'
 import { MapPin, Scroll, ShoppingCart, Timer } from 'phosphor-react'
 import { NavLink } from 'react-router-dom'
 import { TextS } from '../../../../theme/typography'
+import { routes } from '../../../../utils/RoutesPath'
 export default function Header() {
   return (
     <div className="wrapper">
@@ -16,7 +17,7 @@ export default function Header() {
             <MapPin size={22} weight="fill" />
             <TextS color="purple-dark"> Winnipeg, CA</TextS>
           </LocationButton>
-          <NavLink to="/history" title="History button nav">
+          <NavLink to={routes.checkout} title="checkout button nav">
             <ShoppingCart size={24} weight="fill" />
           </NavLink>
         </nav>

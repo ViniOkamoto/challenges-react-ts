@@ -1,18 +1,18 @@
-import React, { ButtonHTMLAttributes } from 'react'
+import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ButtonContainer, ButtonVariant } from './styles'
+import { ButtonVariant } from './styles'
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant
-  text: string
   icon?: React.RefAttributes<SVGSVGElement>
   to?: string
+  children?: ReactNode
 }
 
 export function Button({
   variant = 'primary',
-  text = 'Text',
   to,
   icon,
+  children,
   ...props
 }: ButtonProps) {
   const navigate = useNavigate()
@@ -27,7 +27,7 @@ export function Button({
     >
       <>
         {icon}
-        <p>{text}</p>
+        {children}
       </>
     </ButtonContainer>
   )
