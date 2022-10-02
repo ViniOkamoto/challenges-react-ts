@@ -13,11 +13,6 @@ export const GlobalStyle = createGlobalStyle`
         
     } 
 
-    
-    @media (max-width: 640px) {
-    html {
-        font-size: 80%;
-    }
 
     }
     body {

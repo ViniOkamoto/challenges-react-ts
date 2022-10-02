@@ -25,7 +25,7 @@ export default function HomePage() {
   return (
     <HomeContainer>
       <HeroBackground>
-        <HeroContainer className="wrapper">
+        <HeroContainer>
           <HeroPresentation>
             <TitleXL>Find the perfect coffee for any time of day</TitleXL>
             <TextL>

@@ -10,13 +10,20 @@ export const BenefitDetailContainer = styled.div<BenefitContainerProps>`
   justify-content: center;
   gap: 0.75rem;
   div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 32px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     background: ${({ theme, color }) => theme.color[color]};
     color: ${({ theme }) => theme.color.white};
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+    }
   }
 `

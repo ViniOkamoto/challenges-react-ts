@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import imageBackground from '../../assets/home/background.svg'
 import { rgba } from 'polished'
 
-export const HomeContainer = styled.div``
+export const HomeContainer = styled.main``
 
 export const HeroBackground = styled.div`
   background: ${({ theme }) => `url(${imageBackground}) no-repeat center,
@@ -18,7 +18,7 @@ export const HeroBackground = styled.div`
   padding: 6rem 0;
 `
 
-export const HeroContainer = styled.section`
+export const HeroContainer = styled.section.attrs({ className: 'wrapper' })`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -27,8 +27,8 @@ export const HeroContainer = styled.section`
   gap: 3.5rem;
 
   img {
-    width: 29.75rem;
-    height: 22.5rem;
+    width: 100%;
+    max-width: 476px;
   }
 `
 
