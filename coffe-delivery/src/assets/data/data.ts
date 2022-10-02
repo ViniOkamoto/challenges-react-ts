@@ -6,7 +6,7 @@ export const coffees: Coffe[] = [
     tags: ['traditional'],
     name: 'Traditional Espresso',
     description:
-      'The traditional coffee made with hot water and coffee ground grains',
+      'The traditional coffee made with hot water and  ground grains',
     photo: 'tradicional.png',
     price: 9.9,
   },
@@ -112,8 +112,7 @@ export const coffees: Coffe[] = [
     id: 14,
     tags: ['special', 'with alchohol'],
     name: 'Irlandês',
-    description:
-      'Drink made from coffee, Irish whiskey, sugar and whipped cream',
+    description: 'Drink with coffee, Irish whiskey, sugar and whipped cream',
     photo: 'irlandes.png',
     price: 9.9,
   },
