@@ -1,4 +1,4 @@
-import { TitleXS } from '../../shared/theme/typography'
+import { TitleXS } from '../../core/theme/typography'
 import {
   CheckOrderContainer,
   CheckoutContainer,

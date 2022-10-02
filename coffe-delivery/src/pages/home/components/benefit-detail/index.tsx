@@ -1,8 +1,8 @@
 import { ShoppingCart } from 'phosphor-react'
-import { TextM } from '../../../../shared/theme/typography'
+import { TextM } from '../../../../core/theme/typography'
 import { BenefitDetailContainer } from './styles'
 import { ReactNode } from 'react'
-import { ColorType } from '../../../../shared/theme/default'
+import { ColorType } from '../../../../core/theme/default'
 
 interface BenefitDetailProps {
   icon: ReactNode

@@ -1,4 +1,4 @@
-import { TitleXL } from '../../theme/typography'
+import { TitleXL } from '../../../core/theme/typography'
 export default function NotFoundPage() {
   return (
     <div>

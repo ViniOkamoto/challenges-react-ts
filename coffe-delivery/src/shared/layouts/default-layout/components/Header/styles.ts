@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { TextS } from '../../../../theme/typography'
+import { TextS } from '../../../../../core/theme/typography'
 
 export const HeaderContainer = styled.header`
   display: flex;

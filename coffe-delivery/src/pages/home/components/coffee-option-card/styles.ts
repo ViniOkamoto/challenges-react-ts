@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { ColorType } from '../../../../shared/theme/default'
-import { TextS } from '../../../../shared/theme/typography'
+import { ColorType } from '../../../../core/theme/default'
+import { TextS } from '../../../../core/theme/typography'
 
 export const CoffeCard = styled.article`
   position: relative;

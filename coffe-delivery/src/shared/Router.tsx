@@ -3,7 +3,7 @@ import CheckoutPage from '../pages/checkout'
 import HomePage from '../pages/home'
 import DefaultLayout from './layouts/default-layout'
 import NotFoundPage from './pages/not-found'
-import { routes } from './utils/RoutesPath'
+import { routes } from '../core/utils/RoutesPath'
 
 export default function Router() {
   return (

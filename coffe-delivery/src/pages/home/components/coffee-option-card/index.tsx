@@ -2,7 +2,7 @@ import { ShoppingCart } from 'phosphor-react'
 import Coffe from '../../../../models/coffee'
 import { IconButton } from '../../../../shared/components/icon-button'
 import { QuantityInput } from '../../../../shared/components/quantity-input'
-import { TextS, TitleM, TitleS } from '../../../../shared/theme/typography'
+import { TextS, TitleM, TitleS } from '../../../../core/theme/typography'
 import {
   AddCartWrapper,
   CategoryContainer,

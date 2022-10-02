@@ -2,8 +2,8 @@ import { HeaderContainer, LocationButton, ShopCartCounter } from './styles'
 import coffeDelivery from '../../../../../assets/logo.png'
 import { MapPin, Scroll, ShoppingCart, Timer } from 'phosphor-react'
 import { NavLink } from 'react-router-dom'
-import { TextS } from '../../../../theme/typography'
-import { routes } from '../../../../utils/RoutesPath'
+import { TextS } from '../../../../../core/theme/typography'
+import { routes } from '../../../../../core/utils/RoutesPath'
 export default function Header() {
   return (
     <div className="wrapper">

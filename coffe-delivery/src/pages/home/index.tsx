@@ -1,12 +1,5 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
-import {
-  TextL,
-  TextM,
-  TextS,
-  TitleL,
-  TitleS,
-  TitleXL,
-} from '../../shared/theme/typography'
+import { TextL, TitleL, TitleXL } from '../../core/theme/typography'
 import {
   BenefitContainer,
   CoffesContainer,
