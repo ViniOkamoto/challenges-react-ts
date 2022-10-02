@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 export const LayoutContainer = styled.div`
-  min-width: 40rem;
+  min-width: 420px;
   .wrapper {
     width: 100%;
-    max-width: 70rem;
-
-    margin: 0 auto;
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0 1rem;
   }
 `

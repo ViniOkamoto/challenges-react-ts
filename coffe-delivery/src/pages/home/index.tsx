@@ -1,14 +1,24 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
-import { TextL, TextM, TitleL, TitleXL } from '../../shared/theme/typography'
+import {
+  TextL,
+  TextM,
+  TextS,
+  TitleL,
+  TitleS,
+  TitleXL,
+} from '../../shared/theme/typography'
 import {
   BenefitContainer,
+  CoffesContainer,
+  CoffesListContainer,
   HeroBackground,
   HeroContainer,
   HeroPresentation,
   HomeContainer,
 } from './styles'
 import heroImage from '../../assets/home/heroImage.png'
-import BenefitDetail from './components/BenefitDetail'
+import BenefitDetail from './components/benefit-detail'
+import CoffeeOptionCard from './components/coffee-option-card'
 
 export default function HomePage() {
   return (
@@ -46,9 +56,12 @@ export default function HomePage() {
           <img src={heroImage} alt="hero image" />
         </HeroContainer>
       </HeroBackground>
-      <div className="wrapper">
+      <CoffesContainer className="wrapper">
         <TitleL>Nossos cafés</TitleL>
-      </div>
+        <CoffesListContainer>
+          <CoffeeOptionCard />
+        </CoffesListContainer>
+      </CoffesContainer>
     </HomeContainer>
   )
 }
