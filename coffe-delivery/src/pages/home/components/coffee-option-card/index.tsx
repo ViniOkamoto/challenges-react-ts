@@ -1,4 +1,5 @@
 import { ShoppingCart } from 'phosphor-react'
+import Coffe from '../../../../models/coffee'
 import { IconButton } from '../../../../shared/components/icon-button'
 import { QuantityInput } from '../../../../shared/components/quantity-input'
 import { TextS, TitleM, TitleS } from '../../../../shared/theme/typography'
@@ -10,19 +11,24 @@ import {
   CoffeeFooter,
 } from './styles'
 
-export default function CoffeeOptionCard() {
+interface CoffeOptionCardProps {
+  coffee: Coffe
+}
+export default function CoffeeOptionCard({ coffee }: CoffeOptionCardProps) {
   return (
     <CoffeCard>
-      <img src="/coffees/americano.png" alt="" />
+      <img src={`/coffees/${coffee.photo}`} alt="" />
       <CategoryContainer>
-        <CoffeeCategory>Traditional</CoffeeCategory>
+        {coffee.tags.map((tag) => (
+          <CoffeeCategory key={tag}>{tag}</CoffeeCategory>
+        ))}
       </CategoryContainer>
-      <TitleS as="strong">Expresso Traditional</TitleS>
-      <TextS>O tradicional café feito com água quente e grãos moídos</TextS>
+      <TitleS as="strong">{coffee.name}</TitleS>
+      <TextS>{coffee.description}</TextS>
       <CoffeeFooter>
         <div>
           <TextS as="span">R$</TextS>
-          <TitleM as="span">9.90</TitleM>
+          <TitleM as="span">{coffee.price.toFixed(2)}</TitleM>
         </div>
         <AddCartWrapper>
           <QuantityInput />

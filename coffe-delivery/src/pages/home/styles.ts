@@ -56,6 +56,8 @@ export const CoffesContainer = styled.section`
 `
 export const CoffesListContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 1.25rem;
   margin-top: 3.5rem;
 `
