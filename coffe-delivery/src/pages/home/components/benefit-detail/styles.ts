@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { ColorType } from '../../../../shared/theme/default'
+import { ColorType } from '../../../../core/theme/default'
 
 interface BenefitContainerProps {
   color: ColorType
