@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export type ButtonVariant = 'card' | 'nav'
 
@@ -25,4 +25,12 @@ export const ButtonContainer = styled.button<ButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${({ variant, theme }) =>
+    variant === 'card' &&
+    css`
+      :hover {
+        background: ${({ theme }) => theme.color['purple-default']};
+      }
+    `}
 `
