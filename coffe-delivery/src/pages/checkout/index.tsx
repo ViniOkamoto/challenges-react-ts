@@ -1,8 +1,8 @@
 import { MapPinLine } from 'phosphor-react'
 import { TextM, TextS, TitleXS } from '../../core/theme/typography'
+import Input from '../../shared/components/input'
 import {
   AddressForm,
-  BaseInput,
   CheckOrderContainer,
   CheckoutContainer,
   CheckoutSection,
@@ -27,15 +27,16 @@ export default function CheckoutPage() {
             </div>
           </InstructionContainer>
           <AddressForm>
-            <BaseInput placeholder="Postal Code" className="postalCode" />
-            <BaseInput placeholder="Address" className="address" />
-            <BaseInput placeholder="Number" />
-            <BaseInput
+            <Input placeholder="Postal Code" className="postalCode" />
+            <Input placeholder="Address" className="address" />
+            <Input placeholder="Number" />
+            <Input
               placeholder="Apt, suit, etc"
               className="addressComplement"
+              isOptional={true}
             />
-            <BaseInput placeholder="City" />
-            <BaseInput placeholder="Province" />
+            <Input placeholder="City" />
+            <Input placeholder="Province" />
           </AddressForm>
         </UserInformationContainer>
       </UserInformationSection>

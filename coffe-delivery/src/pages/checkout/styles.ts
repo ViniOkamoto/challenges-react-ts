@@ -71,15 +71,6 @@ export const AddressForm = styled.div`
   }
 `
 
-export const BaseInput = styled.input`
-  border: 0;
-  background: ${({ theme }) => theme.color['base-input']};
-  font-size: ${({ theme }) => theme.typography.text.s};
-  padding: 0.75rem;
-  border-radius: 4px;
-  min-width: 2ch;
-`
-
 export const CheckOrderContainer = styled.div`
   background: ${({ theme }) => theme.color['base-card']};
 `
