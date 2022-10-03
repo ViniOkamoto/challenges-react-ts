@@ -55,11 +55,11 @@ export const CoffeeFooter = styled.div`
   justify-content: space-between;
   gap: 1rem;
 
-  :first-child {
+  > div:first-of-type {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 0.25rem;
   }
 `
 
