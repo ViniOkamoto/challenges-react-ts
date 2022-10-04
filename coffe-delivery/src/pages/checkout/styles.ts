@@ -17,16 +17,13 @@ export const CheckoutSection = styled.section`
   justify-content: flex-start;
   align-items: flex-start;
 `
-export const UserInformationSection = styled(CheckoutSection)`
+export const InformationSection = styled(CheckoutSection)`
   display: flex;
-  justify-content: flex-start;
   max-width: 640px;
   width: 100%;
-  > h1 {
-    margin-bottom: 1rem;
-  }
+  gap: 1rem;
 `
-export const UserInformationContainer = styled.div`
+export const SectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -34,18 +31,13 @@ export const UserInformationContainer = styled.div`
   padding: 2.5rem;
   border-radius: 6px;
 `
-
-export const UserInformationIntroContainer = styled.div`
+export const InstructionContainer = styled.div`
   display: flex;
   gap: 0.5rem;
   margin-bottom: 2rem;
 
   strong {
     color: ${({ theme }) => theme.color['base-subtitle']};
-  }
-
-  svg {
-    color: ${({ theme }) => theme.color['yellow-dark']};
   }
 `
 export const AddressForm = styled.div`
@@ -55,7 +47,7 @@ export const AddressForm = styled.div`
   row-gap: 0.75rem;
   grid-auto-flow: dense;
 
-  @media (min-width: 35em) {
+  @media (min-width: 38em) {
     grid-template-columns: 12.75rem 1fr;
     .postalCode {
       grid-column: span 2;
@@ -68,6 +60,17 @@ export const AddressForm = styled.div`
     .addressComplement {
       grid-column: span 1;
     }
+  }
+`
+
+export const PaymentOptionsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+
+  @media (max-width: 38em) {
+    grid-template-columns: repeat(1, 1fr);
   }
 `
 
