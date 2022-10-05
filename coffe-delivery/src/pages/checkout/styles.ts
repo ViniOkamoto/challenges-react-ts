@@ -1,25 +1,22 @@
 import styled from 'styled-components'
+import { TextL, TextS, TextXS } from '../../core/theme/typography'
 
 export const CheckoutContainer = styled.form.attrs({ className: 'wrapper' })`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin-top: 2.5rem;
-  grid-template-columns: minmax(640px, 1fr) minmax(448px, 1fr);
-  grid-row-gap: 2rem;
-  grid-column-gap: 1rem;
-`
+  display: block;
 
-export const CheckoutSection = styled.section`
+  @media (min-width: 62em) {
+    display: grid;
+    grid-template-columns: minmax(640px, auto) 1fr;
+    grid-column-gap: 2rem;
+  }
+`
+export const PageSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 `
-export const InformationSection = styled(CheckoutSection)`
-  display: flex;
-  max-width: 640px;
+export const InformationSection = styled(PageSection)`
   width: 100%;
   gap: 1rem;
 `
@@ -70,10 +67,90 @@ export const PaymentOptionsContainer = styled.div`
   grid-row-gap: 1rem;
 
   @media (max-width: 38em) {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
   }
 `
 
-export const CheckOrderContainer = styled.div`
-  background: ${({ theme }) => theme.color['base-card']};
+export const CheckOrderSection = styled(PageSection)`
+  width: 100%;
+  gap: 1rem;
+`
+export const CheckOrderContainer = styled(SectionContainer)`
+  border-radius: 6px 44px 6px 44px;
+`
+
+export const OrderListContainer = styled.div`
+  hr {
+    border-top: 1px solid ${({ theme }) => theme.color['base-button']};
+  }
+`
+
+export const Order = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  > p {
+    font-weight: bold;
+  }
+  > div {
+    flex: 1 1 70%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.25rem;
+    img {
+      max-width: 64px;
+      width: 100%;
+    }
+    > div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      > div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+    }
+  }
+`
+export const OrderCostContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1.5rem 0;
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    strong {
+      font-weight: bold;
+    }
+  }
+  > div:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+`
+export const RemoveButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: ${({ theme }) => theme.color['base-text']};
+  font-size: ${({ theme }) => theme.typography.components.buttonS};
+  font-family: ${({ theme }) => theme.typography.roboto['font-family']};
+  padding: 0.6rem;
+  border: none;
+  background: ${({ theme }) => theme.color['base-button']};
+  border-radius: 6px;
+  transition: 0.4s;
+
+  svg {
+    color: ${({ theme }) => theme.color['purple-default']};
+  }
+
+  &:hover {
+    background: ${({ theme }) => theme.color['base-hover']};
+  }
 `

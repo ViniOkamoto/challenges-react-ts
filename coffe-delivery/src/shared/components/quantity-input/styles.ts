@@ -5,12 +5,12 @@ export const QuantityInputContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 4px;
-  padding: 0.5rem;
+  padding: 0.6rem 0.5rem;
   background: ${({ theme }) => theme.color['base-button']};
   border-radius: 6px;
   input {
     flex: 1;
-    width: 100%;
+    width: 2ch;
     text-align: center;
     background: none;
     border: none;

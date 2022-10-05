@@ -13,7 +13,9 @@ export const GlobalStyle = createGlobalStyle`
         
     } 
 
-
+    button {
+        cursor: pointer;
+    }
     body {
         background: ${(props) => props.theme.color.background};
         color:  ${(props) => props.theme.color['base-text']};

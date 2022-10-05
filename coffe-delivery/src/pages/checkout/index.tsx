@@ -4,27 +4,33 @@ import {
   CurrencyDollar,
   MapPinLine,
   Money,
+  Trash,
 } from 'phosphor-react'
 import { defaultTheme } from '../../core/theme/default'
-import { TextM, TextS, TitleXS } from '../../core/theme/typography'
+import { TextL, TextM, TextS, TitleXS } from '../../core/theme/typography'
 import Input from '../../shared/components/input'
 import PaymentMethodButton from '../../shared/components/payment-method'
+import { QuantityInput } from '../../shared/components/quantity-input'
 import {
   AddressForm,
   CheckOrderContainer,
   CheckoutContainer,
-  CheckoutSection,
+  CheckOrderSection,
   SectionContainer,
   InstructionContainer,
   InformationSection,
   PaymentOptionsContainer,
+  OrderListContainer,
+  OrderCostContainer,
+  Order,
+  RemoveButton,
 } from './styles'
 
 export default function CheckoutPage() {
   return (
     <CheckoutContainer>
       <InformationSection>
-        <TitleXS>Complete seu pedido</TitleXS>
+        <TitleXS>Complete your order</TitleXS>
         <SectionContainer>
           <InstructionContainer>
             <MapPinLine size={22} color={defaultTheme.color['yellow-dark']} />
@@ -72,10 +78,43 @@ export default function CheckoutPage() {
           </PaymentOptionsContainer>
         </SectionContainer>
       </InformationSection>
-      <CheckoutSection>
-        <TitleXS>Complete seu pedido</TitleXS>
-        <CheckOrderContainer></CheckOrderContainer>
-      </CheckoutSection>
+      <CheckOrderSection>
+        <TitleXS>Selected coffees</TitleXS>
+        <CheckOrderContainer>
+          <OrderListContainer>
+            <Order>
+              <div>
+                <img src="/coffees/americano.png" alt="" />
+                <div>
+                  <TextM>Americano Espresso</TextM>
+                  <div>
+                    <QuantityInput />
+                    <RemoveButton>
+                      <Trash size={16} />
+                      REMOVER
+                    </RemoveButton>
+                  </div>
+                </div>
+              </div>
+              <TextM>R$ 9,90</TextM>
+            </Order>
+          </OrderListContainer>
+          <OrderCostContainer>
+            <div>
+              <TextS>Itens total</TextS>
+              <TextS>R$ 29,70</TextS>
+            </div>
+            <div>
+              <TextS>Entrega</TextS>
+              <TextS>R$ 3,70</TextS>
+            </div>
+            <div>
+              <TextL as="strong">Itens total</TextL>
+              <TextL as="strong">R$ 29,70</TextL>
+            </div>
+          </OrderCostContainer>
+        </CheckOrderContainer>
+      </CheckOrderSection>
     </CheckoutContainer>
   )
 }
