@@ -1,33 +1,19 @@
 import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ButtonVariant } from './styles'
+import { ButtonContainer } from './styles'
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant
   icon?: React.RefAttributes<SVGSVGElement>
-  to?: string
-  children?: ReactNode
+  text: string
 }
 
-export function Button({
-  variant = 'primary',
-  to,
-  icon,
-  children,
-  ...props
-}: ButtonProps) {
+export function Button({ icon, text, ...props }: ButtonProps) {
   const navigate = useNavigate()
 
   return (
-    <ButtonContainer
-      variant={variant}
-      onClick={() => {
-        if (to) navigate(to)
-      }}
-      {...props}
-    >
+    <ButtonContainer onClick={() => {}} {...props}>
       <>
         {icon}
-        {children}
+        <span>{text}</span>
       </>
     </ButtonContainer>
   )

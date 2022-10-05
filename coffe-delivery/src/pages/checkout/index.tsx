@@ -8,6 +8,7 @@ import {
 } from 'phosphor-react'
 import { defaultTheme } from '../../core/theme/default'
 import { TextL, TextM, TextS, TitleXS } from '../../core/theme/typography'
+import { Button } from '../../shared/components/button'
 import Input from '../../shared/components/input'
 import PaymentMethodButton from '../../shared/components/payment-method'
 import { QuantityInput } from '../../shared/components/quantity-input'
@@ -112,6 +113,7 @@ export default function CheckoutPage() {
               <TextL as="strong">Itens total</TextL>
               <TextL as="strong">R$ 29,70</TextL>
             </div>
+            <Button text={'Confirm order'} />
           </OrderCostContainer>
         </CheckOrderContainer>
       </CheckOrderSection>

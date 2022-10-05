@@ -30,7 +30,7 @@ export const ButtonContainer = styled.button<ButtonProps>`
     variant === 'card' &&
     css`
       :hover {
-        background: ${({ theme }) => theme.color['purple-default']};
+        background: ${theme.color['purple-default']};
       }
     `}
 `
