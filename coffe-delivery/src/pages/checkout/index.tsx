@@ -85,7 +85,9 @@ export default function CheckoutPage() {
           <OrderListContainer>
             <Order>
               <div>
-                <img src="/coffees/americano.png" alt="" />
+                <div>
+                  <img src="/coffees/americano.png" alt="" />
+                </div>
                 <div>
                   <TextM>Americano Espresso</TextM>
                   <div>

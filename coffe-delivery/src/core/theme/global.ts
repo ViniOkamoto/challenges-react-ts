@@ -26,6 +26,11 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 1rem;
     }
 
+    img{
+        display: block;
+        max-width: 100%;
+    }
+
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
         -webkit-appearance: none;

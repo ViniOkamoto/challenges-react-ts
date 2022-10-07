@@ -19,6 +19,7 @@ export const PageSection = styled.section`
 export const InformationSection = styled(PageSection)`
   width: 100%;
   gap: 1rem;
+  margin-bottom: 1rem;
 `
 export const SectionContainer = styled.div`
   display: flex;
@@ -99,9 +100,12 @@ export const Order = styled.div`
     justify-content: center;
     align-items: flex-start;
     gap: 1.25rem;
-    img {
-      max-width: 64px;
-      width: 100%;
+
+    > div:first-child {
+      width: 4rem;
+      img {
+        width: 100%;
+      }
     }
     > div {
       width: 100%;
