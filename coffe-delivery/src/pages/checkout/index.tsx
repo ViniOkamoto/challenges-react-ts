@@ -6,8 +6,10 @@ import {
   Money,
   Trash,
 } from 'phosphor-react'
+import { useNavigate, useMatches } from 'react-router-dom'
 import { defaultTheme } from '../../core/theme/default'
 import { TextL, TextM, TextS, TitleXS } from '../../core/theme/typography'
+import { routes } from '../../core/utils/RoutesPath'
 import { Button } from '../../shared/components/button'
 import Input from '../../shared/components/input'
 import PaymentMethodButton from '../../shared/components/payment-method'
@@ -28,6 +30,10 @@ import {
 } from './styles'
 
 export default function CheckoutPage() {
+  const navigate = useNavigate()
+  function handleOnClick() {
+    navigate(routes.checkoutSucess)
+  }
   return (
     <CheckoutContainer>
       <InformationSection>
@@ -115,7 +121,7 @@ export default function CheckoutPage() {
               <TextL as="strong">Itens total</TextL>
               <TextL as="strong">R$ 29,70</TextL>
             </div>
-            <Button text={'Confirm order'} />
+            <Button text={'Confirm order'} onClick={handleOnClick} />
           </OrderCostContainer>
         </CheckOrderContainer>
       </CheckOrderSection>

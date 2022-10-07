@@ -10,7 +10,7 @@ import {
   HomeContainer,
 } from './styles'
 import heroImage from '../../assets/home/heroImage.png'
-import BenefitDetail from './components/benefit-detail'
+import InfoTile from './components/info-tile'
 import CoffeeOptionCard from './components/coffee-option-card'
 import { coffees } from '../../assets/data/data'
 
@@ -25,21 +25,21 @@ export default function HomePage() {
               With Coffe Delivery you get your coffee wherever you are, anytime
             </TextL>
             <BenefitContainer>
-              <BenefitDetail
+              <InfoTile
                 icon={<ShoppingCart size={16} weight="fill" />}
                 text="Simple and secure purchase"
-              ></BenefitDetail>
-              <BenefitDetail
+              ></InfoTile>
+              <InfoTile
                 icon={<Package size={16} weight="fill" />}
                 text="Packaging keeps the coffee intact"
                 color="base-text"
               />
-              <BenefitDetail
+              <InfoTile
                 icon={<Timer size={16} weight="fill" />}
                 text="Fast and tracked delivery"
                 color="yellow-default"
               />
-              <BenefitDetail
+              <InfoTile
                 icon={<Coffee size={16} weight="fill" />}
                 text="Coffee arrives fresh and hot to you"
                 color="purple-default"

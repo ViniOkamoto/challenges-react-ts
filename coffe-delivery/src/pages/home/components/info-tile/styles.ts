@@ -5,9 +5,10 @@ interface BenefitContainerProps {
   color: ColorType
 }
 export const BenefitDetailContainer = styled.div<BenefitContainerProps>`
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.75rem;
   div {
     position: relative;

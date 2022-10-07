@@ -4,20 +4,20 @@ import { BenefitDetailContainer } from './styles'
 import { ReactNode } from 'react'
 import { ColorType } from '../../../../core/theme/default'
 
-interface BenefitDetailProps {
+interface InfoTileProps {
   icon: ReactNode
-  text: string
+  text: string | ReactNode
   color?: ColorType
 }
-export default function BenefitDetail({
+export default function InfoTile({
   icon,
   text,
   color = 'yellow-dark',
-}: BenefitDetailProps) {
+}: InfoTileProps) {
   return (
     <BenefitDetailContainer color={color}>
       <div>{icon}</div>
-      <TextM> {text}</TextM>
+      {typeof text === 'string' ? <TextM> {text}</TextM> : text}
     </BenefitDetailContainer>
   )
 }
