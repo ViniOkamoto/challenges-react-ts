@@ -111,7 +111,7 @@ export const coffees: Coffee[] = [
   {
     id: 14,
     tags: ['special', 'with alchohol'],
-    name: 'Irlandês',
+    name: 'Irish',
     description: 'Drink with coffee, Irish whiskey, sugar and whipped cream',
     photo: 'irlandes.png',
     price: 9.9,
