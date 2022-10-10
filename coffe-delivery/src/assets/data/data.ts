@@ -1,6 +1,6 @@
-import Coffe from '../../models/coffee'
+import Coffee from '../../models/coffee'
 
-export const coffees: Coffe[] = [
+export const coffees: Coffee[] = [
   {
     id: 1,
     tags: ['traditional'],

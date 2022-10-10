@@ -8,7 +8,7 @@ const furniture = [
 
 type CoffeeCategory = typeof furniture[number]
 
-export default interface Coffe {
+export default interface Coffee {
   id: number
   tags: CoffeeCategory[]
   name: string
