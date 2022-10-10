@@ -14,7 +14,6 @@ export default function PaymentMethodButton({
   checked,
   ...props
 }: PaymentMethodInputProps) {
-  console.log(checked)
   return (
     <PaymentMethodContainer>
       <input
