@@ -50,7 +50,7 @@ export default function HomePage() {
         </HeroContainer>
       </HeroBackground>
       <CoffesContainer className="wrapper">
-        <TitleL>Nossos cafés</TitleL>
+        <TitleL>Our Coffees</TitleL>
         <CoffesListContainer>
           {coffees.map((coffee) => (
             <CoffeeOptionCard key={coffee.id} coffee={coffee} />

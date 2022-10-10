@@ -1,10 +1,4 @@
-import {
-  createContext,
-  ReactNode,
-  useState,
-  useReducer,
-  useEffect,
-} from 'react'
+import { createContext, ReactNode, useReducer } from 'react'
 import { Order } from '../models/order'
 import { addOrderToCartAction } from '../reducers/cart/actions'
 import cartReducer from '../reducers/cart/reducer'
