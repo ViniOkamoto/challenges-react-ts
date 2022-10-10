@@ -11,10 +11,12 @@ export default function Header() {
   return (
     <div className="wrapper">
       <HeaderContainer>
-        <img
-          src={coffeDelivery}
-          alt="coffe delivery logo description: a drawed purple disposable cup with a drawed rocket inside it"
-        />
+        <NavLink to={routes.home}>
+          <img
+            src={coffeDelivery}
+            alt="coffe delivery logo description: a drawed purple disposable cup with a drawed rocket inside it"
+          />
+        </NavLink>
         <nav>
           <LocationButton>
             <MapPin size={22} weight="fill" />

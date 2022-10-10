@@ -8,14 +8,16 @@ interface OrderTileProps {
   order: Order
 }
 export default function OrderTile({ order }: OrderTileProps) {
+  const coffee = order.coffee
+
   return (
     <OrderContainer>
       <div>
         <div>
-          <img src="/coffees/americano.png" alt="" />
+          <img src={`/coffees/${coffee.photo}`} alt="" />
         </div>
         <div>
-          <TextM>Americano Espresso</TextM>
+          <TextM>{coffee.name}</TextM>
           <div>
             <QuantityInput
               onIncrease={() => {}}
@@ -29,7 +31,7 @@ export default function OrderTile({ order }: OrderTileProps) {
           </div>
         </div>
       </div>
-      <TextM>R$ 9,90</TextM>
+      <TextM>R$ {coffee.price.toFixed()}</TextM>
     </OrderContainer>
   )
 }

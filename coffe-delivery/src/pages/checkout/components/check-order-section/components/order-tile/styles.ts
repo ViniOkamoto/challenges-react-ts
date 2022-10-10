@@ -34,23 +34,7 @@ export const OrderContainer = styled.div`
     }
   }
 `
-export const OrderCostContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 1.5rem 0;
-  > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    strong {
-      font-weight: bold;
-    }
-  }
-  > div:not(:last-child) {
-    margin-bottom: 0.75rem;
-  }
-`
+
 export const RemoveButton = styled.button`
   display: flex;
   align-items: center;

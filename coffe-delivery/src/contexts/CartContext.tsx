@@ -1,10 +1,17 @@
-import { createContext, ReactNode, useState, useReducer } from 'react'
+import {
+  createContext,
+  ReactNode,
+  useState,
+  useReducer,
+  useEffect,
+} from 'react'
 import { Order } from '../models/order'
 import { addOrderToCartAction } from '../reducers/cart/actions'
 import cartReducer from '../reducers/cart/reducer'
 
 interface CartContextType {
   orders: Order[]
+  totalOrdersPrice: number
   addOrderToCart: (order: Order) => void
 }
 
@@ -28,9 +35,18 @@ export default function CartContextProvider({
       }
     },
   )
-
   const { orders } = cartState
+  const totalOrdersPrice = calculateTotalOrderPrice()
 
+  function calculateTotalOrderPrice(): number {
+    let total = 0
+    if (orders.length > 0) {
+      orders.forEach((order) => {
+        total = order.quantity * order.coffee.price
+      })
+    }
+    return total
+  }
   function addOrderToCart(order: Order) {
     dispatch(addOrderToCartAction(order))
   }
@@ -44,6 +60,7 @@ export default function CartContextProvider({
     <CartContext.Provider
       value={{
         orders,
+        totalOrdersPrice,
         addOrderToCart,
       }}
     >
