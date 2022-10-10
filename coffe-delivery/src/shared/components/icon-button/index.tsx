@@ -15,7 +15,6 @@ export function IconButton({
   children,
   ...props
 }: ButtonProps) {
-  console.log(variant)
   const navigate = useNavigate()
 
   return (

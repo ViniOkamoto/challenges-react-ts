@@ -1,5 +1,5 @@
 import { ShoppingCart } from 'phosphor-react'
-import Coffe from '../../../../models/coffee'
+import Coffee from '../../../../models/coffee'
 import { IconButton } from '../../../../shared/components/icon-button'
 import { QuantityInput } from '../../../../shared/components/quantity-input'
 import { TextS, TitleM, TitleS } from '../../../../core/theme/typography'
@@ -10,11 +10,33 @@ import {
   CoffeeCategory,
   CoffeeFooter,
 } from './styles'
+import { useContext, useState } from 'react'
+import { CartContext } from '../../../../contexts/CartContext'
 
 interface CoffeOptionCardProps {
-  coffee: Coffe
+  coffee: Coffee
 }
 export default function CoffeeOptionCard({ coffee }: CoffeOptionCardProps) {
+  const { addOrderToCart } = useContext(CartContext)
+  const [quantity, setQuantity] = useState(0)
+
+  function handleOnIncrease() {
+    setQuantity(quantity + 1)
+  }
+
+  function handleOnDecrease() {
+    if (quantity === 0) return
+    setQuantity(quantity - 1)
+  }
+
+  function handleOnAddOrder() {
+    addOrderToCart({
+      coffee,
+      quantity,
+    })
+    setQuantity(0)
+  }
+
   return (
     <CoffeCard>
       <img src={`/coffees/${coffee.photo}`} alt="" />
@@ -31,8 +53,16 @@ export default function CoffeeOptionCard({ coffee }: CoffeOptionCardProps) {
           <TitleM as="span">{coffee.price.toFixed(2)}</TitleM>
         </div>
         <AddCartWrapper>
-          <QuantityInput />
-          <IconButton variant="card">
+          <QuantityInput
+            onIncrease={handleOnIncrease}
+            onDecrease={handleOnDecrease}
+            quantity={quantity}
+          />
+          <IconButton
+            variant="card"
+            onClick={handleOnAddOrder}
+            disabled={quantity === 0}
+          >
             <ShoppingCart weight="fill" size={22} />
           </IconButton>
         </AddCartWrapper>

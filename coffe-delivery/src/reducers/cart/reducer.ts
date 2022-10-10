@@ -10,7 +10,7 @@ export default function cartReducer(state: CartState, action: any) {
   switch (action.type) {
     case ActionTypes.ADD_ORDER_IN_CART: {
       const index = state.orders.findIndex(
-        (order) => order.coffe.id === action.payload.order.coffe.id,
+        (order) => order.coffee.id === action.payload.order.coffee.id,
       )
       return produce(state, (draft) => {
         if (index === -1) {

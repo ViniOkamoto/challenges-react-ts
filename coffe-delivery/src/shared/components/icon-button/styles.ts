@@ -33,4 +33,8 @@ export const ButtonContainer = styled.button<ButtonProps>`
         background: ${theme.color['purple-default']};
       }
     `}
+
+  :disabled {
+    opacity: 0.4;
+  }
 `

@@ -1,4 +1,4 @@
-import Coffe from './coffee'
+import Coffee from './coffee'
 import { PaymentMethodStrategy } from './payment-method'
 
 export interface UserAddress {
@@ -11,7 +11,7 @@ export interface UserAddress {
 }
 export interface Order {
   quantity: number
-  coffe: Coffe
+  coffee: Coffee
 }
 
 export interface CompleteOrder {
