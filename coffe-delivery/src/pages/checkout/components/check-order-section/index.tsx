@@ -28,10 +28,10 @@ export default function CheckOrderSection() {
       <CheckOrderContainer>
         <OrderListContainer>
           {orders.map((order) => (
-            <>
-              <OrderTile key={order.coffee.id} order={order} />
+            <div key={order.coffee.id}>
+              <OrderTile order={order} />
               <hr />
-            </>
+            </div>
           ))}
         </OrderListContainer>
         <OrderCostContainer>

@@ -1,12 +1,20 @@
 import { createContext, ReactNode, useReducer } from 'react'
 import { Order } from '../models/order'
-import { addOrderToCartAction } from '../reducers/cart/actions'
+import {
+  addOrderToCartAction,
+  decreaseOrderQuantityAction,
+  increaseOrderQuantityAction,
+  removeOrderFromCartAction,
+} from '../reducers/cart/actions'
 import cartReducer from '../reducers/cart/reducer'
 
 interface CartContextType {
   orders: Order[]
   totalOrdersPrice: number
   addOrderToCart: (order: Order) => void
+  decreaseOrderQuantity: (order: Order) => void
+  increaseOrderQuantity: (order: Order) => void
+  removeOrderFromCart: (order: Order) => void
 }
 
 export const CartContext = createContext({} as CartContextType)
@@ -41,8 +49,21 @@ export default function CartContextProvider({
     }
     return total
   }
+
   function addOrderToCart(order: Order) {
     dispatch(addOrderToCartAction(order))
+  }
+
+  function increaseOrderQuantity(order: Order) {
+    dispatch(increaseOrderQuantityAction(order))
+  }
+
+  function decreaseOrderQuantity(order: Order) {
+    dispatch(decreaseOrderQuantityAction(order))
+  }
+
+  function removeOrderFromCart(order: Order) {
+    dispatch(removeOrderFromCartAction(order))
   }
   //   useEffect(() => {
   //     const stateJSON = JSON.stringify(cartState)
@@ -56,6 +77,9 @@ export default function CartContextProvider({
         orders,
         totalOrdersPrice,
         addOrderToCart,
+        increaseOrderQuantity,
+        decreaseOrderQuantity,
+        removeOrderFromCart,
       }}
     >
       {children}
