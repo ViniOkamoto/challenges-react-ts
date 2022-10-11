@@ -43,12 +43,13 @@ export default function CartContextProvider({
     },
   )
   const { orders } = cartState
+  const totalOrdersPrice = calculateTotalOrderPrice()
+
   useEffect(() => {
     const stateJSON = JSON.stringify(cartState)
 
     localStorage.setItem(localStorageKey, stateJSON)
   }, [cartState])
-  const totalOrdersPrice = calculateTotalOrderPrice()
 
   function calculateTotalOrderPrice(): number {
     let total = 0
