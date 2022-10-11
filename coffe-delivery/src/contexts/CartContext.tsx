@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useReducer } from 'react'
+import { createContext, ReactNode, useEffect, useReducer } from 'react'
 import { Order } from '../models/order'
 import {
   addOrderToCartAction,
@@ -26,18 +26,28 @@ interface CartContextProviderProps {
 export default function CartContextProvider({
   children,
 }: CartContextProviderProps) {
+  const localStorageKey = '@coffee-delivery:cart-state-1.0.0'
   const [cartState, dispatch] = useReducer(
     cartReducer,
     {
       orders: [],
     },
     () => {
+      const storedStateAsJson = localStorage.getItem(localStorageKey)
+      if (storedStateAsJson) {
+        return JSON.parse(storedStateAsJson)
+      }
       return {
         orders: [],
       }
     },
   )
   const { orders } = cartState
+  useEffect(() => {
+    const stateJSON = JSON.stringify(cartState)
+
+    localStorage.setItem(localStorageKey, stateJSON)
+  }, [cartState])
   const totalOrdersPrice = calculateTotalOrderPrice()
 
   function calculateTotalOrderPrice(): number {
@@ -65,11 +75,6 @@ export default function CartContextProvider({
   function removeOrderFromCart(order: Order) {
     dispatch(removeOrderFromCartAction(order))
   }
-  //   useEffect(() => {
-  //     const stateJSON = JSON.stringify(cartState)
-
-  //     localStorage.setItem('@ignite-timer:cycles-state-1.0.0', stateJSON)
-  //   }, [cartState])
 
   return (
     <CartContext.Provider
