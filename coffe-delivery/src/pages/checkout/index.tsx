@@ -43,7 +43,6 @@ export default function CheckoutPage() {
   const { orders, totalOrdersPrice, cleanCart } = useContext(CartContext)
 
   function handleSubmitOrder(data: CompleteOrderFormData) {
-    console.log(data.paymentMethod.type)
     const completeOrder: CompleteOrder = {
       id: uniqueId(),
       ...data,
