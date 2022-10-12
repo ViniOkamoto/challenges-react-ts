@@ -1,14 +1,29 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { TextXS } from '../../../core/theme/typography'
 
+export interface BaseInputProps {
+  error?: string
+}
 export const InputWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`
+
+export const InputError = styled(TextXS)`
+  margin-top: 0.5rem;
+  color: ${({ theme }) => theme.color['base-error']};
+`
+export const InputContainer = styled.div`
   position: relative;
   width: 100%;
   display: flex;
   align-items: center;
 `
 
-export const BaseInput = styled.input`
+export const BaseInput = styled.input<BaseInputProps>`
   border: 1px transparent solid;
   flex: 1;
   background: ${({ theme }) => theme.color['base-input']};
@@ -24,6 +39,15 @@ export const BaseInput = styled.input`
   :focus {
     border: 1px ${({ theme }) => theme.color['yellow-dark']} solid;
   }
+
+  ${({ error, theme }) => {
+    return (
+      error &&
+      css`
+        border-color: ${theme.color['base-error']};
+      `
+    )
+  }}
 `
 
 export const InputSuffix = styled(TextXS)`

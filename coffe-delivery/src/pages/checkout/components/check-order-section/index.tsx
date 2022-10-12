@@ -18,10 +18,10 @@ export default function CheckOrderSection() {
   const { orders, totalOrdersPrice } = useContext(CartContext)
 
   const totalPrice = totalOrdersPrice + deliveryFee
-  const navigate = useNavigate()
-  function handleOnClick() {
-    navigate(routes.checkoutSucess)
-  }
+  // const navigate = useNavigate()
+  // function handleOnClick() {
+  //   navigate(routes.checkoutSucess)
+  // }
   return (
     <OrderSection>
       <TitleXS>Selected coffees</TitleXS>
@@ -49,8 +49,8 @@ export default function CheckOrderSection() {
           </div>
           <Button
             text={'Confirm order'}
-            onClick={handleOnClick}
             disabled={orders.length === 0}
+            type="submit"
           />
         </OrderCostContainer>
       </CheckOrderContainer>

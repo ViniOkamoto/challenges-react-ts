@@ -10,6 +10,7 @@ export const defaultTheme = {
     'base-button': '#E6E5E5',
     'base-input': '#EDEDED',
     'base-card': '#F3F2F2',
+    'base-error': '#FF6C6C',
 
     'purple-dark': '#4B2995',
     'purple-default': '#8047F8',

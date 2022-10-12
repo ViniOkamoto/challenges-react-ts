@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { TextL, TextS, TextXS } from '../../core/theme/typography'
 
-export const CheckoutContainer = styled.form.attrs({ className: 'wrapper' })`
+export const CheckoutForm = styled.form.attrs({ className: 'wrapper' })`
   display: block;
 
   @media (min-width: 62em) {

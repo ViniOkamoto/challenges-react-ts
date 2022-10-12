@@ -1,28 +1,20 @@
-import { InputHTMLAttributes, ReactNode } from 'react'
+import { forwardRef, InputHTMLAttributes, ReactNode } from 'react'
 import { ContentContainer, PaymentMethodContainer } from './styles'
 
-interface PaymentMethodInputProps
-  extends InputHTMLAttributes<HTMLInputElement> {
+type PaymentMethodButtonProps = InputHTMLAttributes<HTMLInputElement> & {
   icon: ReactNode
   label: string
+  error?: string
 }
 
-export default function PaymentMethodButton({
-  id,
-  icon,
-  label,
-  checked,
-  ...props
-}: PaymentMethodInputProps) {
+// eslint-disable-next-line react/display-name
+export const PaymentMethodButton = forwardRef<
+  HTMLInputElement,
+  PaymentMethodButtonProps
+>(({ id, icon, label, ...props }, ref) => {
   return (
     <PaymentMethodContainer>
-      <input
-        id={id}
-        type="radio"
-        {...props}
-        name="paymentMethod"
-        checked={checked}
-      />
+      <input id={id} type="radio" {...props} name="paymentMethod" ref={ref} />
       <label htmlFor={id}>
         <ContentContainer>
           {icon}
@@ -31,4 +23,4 @@ export default function PaymentMethodButton({
       </label>
     </PaymentMethodContainer>
   )
-}
+})

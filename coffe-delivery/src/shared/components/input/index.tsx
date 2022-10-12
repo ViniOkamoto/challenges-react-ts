@@ -1,14 +1,29 @@
-import { InputHTMLAttributes } from 'react'
-import { BaseInput, InputSuffix, InputWrapper } from './styles'
+import { forwardRef, InputHTMLAttributes } from 'react'
+import {
+  BaseInput,
+  InputContainer,
+  InputError,
+  InputSuffix,
+  InputWrapper,
+} from './styles'
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   isOptional?: boolean
+  error?: string
 }
-export default function Input({ isOptional, className, ...props }: InputProps) {
-  return (
-    <InputWrapper className={className}>
-      <BaseInput {...props} />
-      {isOptional && <InputSuffix>Optional</InputSuffix>}
-    </InputWrapper>
-  )
-}
+// eslint-disable-next-line react/display-name
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  // eslint-disable-next-line n/handle-callback-err
+  ({ error, isOptional, className, ...props }, ref) => {
+    return (
+      <InputWrapper className={className}>
+        <InputContainer>
+          <BaseInput error={error} {...props} ref={ref} />
+          {isOptional && <InputSuffix>Optional</InputSuffix>}
+        </InputContainer>
+
+        {error && <InputError>{error}</InputError>}
+      </InputWrapper>
+    )
+  },
+)
