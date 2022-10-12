@@ -11,6 +11,14 @@
  
 A ecommerce app based on a coffee delivery service. Buy your own coffee from anywhere. You can add coffees at the cart and purchase chosing your way to do the payment.
  
+ # 🧩 Features
+ - List of products (coffee) available for purchase
+- Add specific amount of items to cart
+- Increase or remove the quantity of items in the cart
+- Address form for user fill with your address
+- Display total items in cart in Header
+- Display the total value of the sum of items in the cart multiplied by the value
+
  # 🧪 Technologies
 
 This project was developed using the following technologies:

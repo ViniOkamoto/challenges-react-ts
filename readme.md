@@ -13,9 +13,21 @@
 
 ### Rocket Todo
 
-<a href="https://github.com/ViniOkamoto/challenges-react-ts/tree/master/rocket-todo">
-  <img src="readme-resources/rocket-todo.svg" alt="logo" width="80" height="80">
-</a>
+<div align='center'>
+        <a href="https://github.com/ViniOkamoto/challenges-react-ts/tree/master/rocket-todo">
+          <img src="readme-resources/rocket/cover.png" alt="Cover"/>
+        </a>
+</div>
 
 Helpful TODO web application with state control/form/componentization and more! [Source code](https://github.com/ViniOkamoto/challenges-react-ts/tree/master/rocket-todo)
+
+### Coffee Delivery
+
+<div align='center'>
+        <a href="https://github.com/ViniOkamoto/challenges-react-ts/tree/master/coffe-delivery">
+          <img src="readme-resources/rocket/cover.png" alt="Cover"/>
+        </a>
+</div>
+
+A ecommerce app based on a coffee delivery service. Buy your own coffee from anywhere. You can add coffees at the cart and purchase chosing your way to do the payment.[Source code](https://github.com/ViniOkamoto/challenges-react-ts/tree/master/coffe-delivery)
 
