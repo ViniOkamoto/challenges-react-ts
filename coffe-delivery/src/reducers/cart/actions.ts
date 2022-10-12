@@ -5,6 +5,7 @@ export enum ActionTypes {
   INCREASE_ORDER_QUANTITY = 'INCREASE_ORDER_QUANTITY',
   DECREASE_ORDER_QUANTITY = 'DECREASE_ORDER_QUANTITY',
   REMOVE_ORDER_FROM_CART = 'REMOVE_ORDER_FROM_CART',
+  CLEAN_CART = 'CLEAN_CART',
 }
 
 export function addOrderToCartAction(order: Order) {
@@ -38,5 +39,11 @@ export function removeOrderFromCartAction(order: Order) {
     payload: {
       order,
     },
+  }
+}
+
+export function cleanCartAction() {
+  return {
+    type: ActionTypes.CLEAN_CART,
   }
 }

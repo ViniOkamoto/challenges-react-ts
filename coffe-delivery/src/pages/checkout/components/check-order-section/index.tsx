@@ -27,7 +27,7 @@ export default function CheckOrderSection() {
       <TitleXS>Selected coffees</TitleXS>
       <CheckOrderContainer>
         <OrderListContainer>
-          {orders.map((order) => (
+          {orders?.map((order) => (
             <div key={order.coffee.id}>
               <OrderTile order={order} />
               <hr />
@@ -49,7 +49,7 @@ export default function CheckOrderSection() {
           </div>
           <Button
             text={'Confirm order'}
-            disabled={orders.length === 0}
+            disabled={orders?.length === 0}
             type="submit"
           />
         </OrderCostContainer>

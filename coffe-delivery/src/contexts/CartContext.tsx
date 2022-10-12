@@ -2,6 +2,7 @@ import { createContext, ReactNode, useEffect, useReducer } from 'react'
 import { Order } from '../models/order'
 import {
   addOrderToCartAction,
+  cleanCartAction,
   decreaseOrderQuantityAction,
   increaseOrderQuantityAction,
   removeOrderFromCartAction,
@@ -15,6 +16,7 @@ interface CartContextType {
   decreaseOrderQuantity: (order: Order) => void
   increaseOrderQuantity: (order: Order) => void
   removeOrderFromCart: (order: Order) => void
+  cleanCart: () => void
 }
 
 export const CartContext = createContext({} as CartContextType)
@@ -53,9 +55,9 @@ export default function CartContextProvider({
 
   function calculateTotalOrderPrice(): number {
     let total = 0
-    if (orders.length > 0) {
-      orders.forEach((order) => {
-        total = order.quantity * order.coffee.price
+    if (orders?.length > 0) {
+      orders?.forEach((order) => {
+        total += order.quantity * order.coffee.price
       })
     }
     return total
@@ -77,6 +79,10 @@ export default function CartContextProvider({
     dispatch(removeOrderFromCartAction(order))
   }
 
+  function cleanCart() {
+    dispatch(cleanCartAction())
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -86,6 +92,7 @@ export default function CartContextProvider({
         increaseOrderQuantity,
         decreaseOrderQuantity,
         removeOrderFromCart,
+        cleanCart,
       }}
     >
       {children}

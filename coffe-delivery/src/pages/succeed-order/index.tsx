@@ -6,8 +6,15 @@ import {
 import deliveringImage from '../../assets/success-order.png'
 import InfoTile from '../home/components/info-tile'
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
+import { useLocation } from 'react-router-dom'
+import { CompleteOrder } from '../../models/order'
 
+interface LocationType {
+  state: CompleteOrder
+}
 export default function SucceedOrderPage() {
+  const { state } = useLocation() as unknown as LocationType
+
   return (
     <SucceedOrderContainer>
       <TitleL>Uhu! Order confirmed</TitleL>
@@ -21,9 +28,11 @@ export default function SucceedOrderPage() {
             icon={<MapPin weight="fill" />}
             text={
               <TextM>
-                Entrega em{' '}
+                Delivery address{' '}
                 <strong>
-                  Rua João Daniel Martinelli, 102 Farrapos - Porto Alegre, RS
+                  {`${state.address} - ${state.number}${
+                    state.complement && ` - ${state.complement}`
+                  }, ${state.city}, ${state.province}, ${state.postalCode} `}
                 </strong>
               </TextM>
             }
@@ -35,7 +44,7 @@ export default function SucceedOrderPage() {
               <TextM>
                 Estimated delivery time
                 <br />
-                <strong>Previsão 20 - 30 min</strong>
+                <strong>Between 20 - 30 min</strong>
               </TextM>
             }
           />
@@ -45,7 +54,7 @@ export default function SucceedOrderPage() {
               <TextM>
                 Payment method
                 <br />
-                <strong>Debit Card</strong>
+                <strong>{state.paymentMethod.type}</strong>
               </TextM>
             }
           />

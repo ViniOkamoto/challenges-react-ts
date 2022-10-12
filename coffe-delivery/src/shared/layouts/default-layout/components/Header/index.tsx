@@ -24,7 +24,7 @@ export default function Header() {
           </LocationButton>
           <NavLink to={routes.checkout} title="checkout button nav">
             <ShoppingCart size={24} weight="fill" />
-            {orders.length > 0 && (
+            {orders?.length > 0 && (
               <ShopCartCounter>{orders.length}</ShopCartCounter>
             )}
           </NavLink>
