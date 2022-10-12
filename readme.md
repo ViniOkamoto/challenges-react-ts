@@ -25,7 +25,7 @@ Helpful TODO web application with state control/form/componentization and more! 
 
 <div align='center'>
         <a href="https://github.com/ViniOkamoto/challenges-react-ts/tree/master/coffe-delivery">
-          <img src="readme-resources/rocket/cover.png" alt="Cover"/>
+          <img src="readme-resources/coffee/cover.png" alt="Cover"/>
         </a>
 </div>
 
