@@ -22,8 +22,9 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
     }
     body, input, textarea, button{
-        ${RobotoFont}
-        font-size: 1rem;
+        font-family: ${({ theme: { typography } }) =>
+          typography.font['font-family']};
+        font-size: ${({ theme }) => theme.typography.sizes.s}
     }
 
     img{

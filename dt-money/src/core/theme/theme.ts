@@ -29,18 +29,12 @@ export const defaultTheme = {
         regular: '400',
       },
     },
-    title: {
-      xl: '3rem',
-      l: '2rem',
-      m: '1.5rem',
-      s: '1.25rem',
-      xs: '1.125rem',
-    },
-    text: {
-      l: '1.25rem',
-      m: '1rem',
-      s: '0.875rem',
-      xs: '0.75rem',
+    sizes: {
+      xl: '2rem',
+      l: '1.5rem',
+      m: '1.25rem',
+      s: '1rem',
+      xs: '0.875rem',
     },
   } as const,
 } as const
