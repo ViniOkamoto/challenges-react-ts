@@ -15,7 +15,7 @@ export const RobotoFont = styled.p<TextProps>`
   color: ${(props) =>
     props.color
       ? props.theme.color[`${props.color}`]
-      : props.theme.color['base-text']};
+      : props.theme.color['gray-500']};
 `
 
 export const TitleXL = styled(RobotoFont)`

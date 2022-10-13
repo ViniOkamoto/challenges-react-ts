@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     :focus {
         outline: 0;
-        box-shadow: none;
+        box-shadow: 0 0 0 2px ${({ theme }) => theme.color['green-500']};
         
     } 
 
@@ -17,8 +17,8 @@ export const GlobalStyle = createGlobalStyle`
         cursor: pointer;
     }
     body {
-        background: ${(props) => props.theme.color.background};
-        color:  ${(props) => props.theme.color['base-text']};
+        background: ${({ theme }) => theme.color['gray-800']};
+        color:  ${({ theme }) => theme.color['gray-100']};
         -webkit-font-smoothing: antialiased;
     }
     body, input, textarea, button{
