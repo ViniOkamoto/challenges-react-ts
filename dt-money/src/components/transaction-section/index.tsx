@@ -1,3 +1,4 @@
+import SearchForm from '../search-form'
 import {
   PriceHighlight,
   TransactionTable,
@@ -7,6 +8,7 @@ import {
 export default function TransactionSection() {
   return (
     <TranscationContainer>
+      <SearchForm />
       <TransactionTable>
         <tbody>
           <tr>

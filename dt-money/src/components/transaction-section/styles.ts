@@ -8,6 +8,7 @@ export const TranscationContainer = styled.main`
 `
 
 export const TransactionTable = styled.table`
+  margin-top: 1.5rem;
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 0.5rem;
