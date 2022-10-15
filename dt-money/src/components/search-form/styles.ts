@@ -25,16 +25,20 @@ export const SearchFormContainer = styled.form`
     border: 0;
     padding: 1rem;
     background: transparent;
-    border: 1px solid ${({ theme }) => theme.color['gray-300']};
+    border: 1px solid ${({ theme }) => theme.color['green-300']};
     color: ${({ theme }) => theme.color['green-300']};
     font-weight: bold;
     border-radius: 6px;
 
-    &:hover {
+    &:not(:disabled):hover {
       background: ${({ theme }) => theme.color['green-500']};
       border: 1px solid ${({ theme }) => theme.color['green-500']};
       color: ${({ theme }) => theme.color.white};
       transition: 0.2s;
+    }
+
+    &:disabled {
+      opacity: 0.3;
     }
   }
 `
