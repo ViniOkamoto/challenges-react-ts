@@ -25,7 +25,7 @@ export default function TransactionSection() {
                   }${priceFormatter.format(transaction.price)}`}
                 </PriceHighlight>
               </td>
-              <td>{transaction.category.type}</td>
+              <td>{transaction.category}</td>
               <td>{dateFormatter.format(new Date(transaction.createdAt))}</td>
             </tr>
           ))}

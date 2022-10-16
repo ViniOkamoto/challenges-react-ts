@@ -4,10 +4,7 @@
             "id": 1,
             "description": "Site Development",
             "type": "outcome",
-            "category": {
-                "id": 1,
-                "type": "Business"
-            },
+            "category":"Business",
             "price": 11000,
             "createdAt": "2022-10-14T13:09:30.832Z"
         },
@@ -15,26 +12,9 @@
             "id": 2,
             "description": "Site Development",
             "type": "income",
-            "category": {
-                "id": 1,
-                "type": "Business"
-            },
+            "category": "Business",
             "price": 14000,
             "createdAt": "2022-10-14T13:09:30.832Z"
-        }
-    ],
-    "categories": [
-        {
-            "id": 1,
-            "type": "Business"
-        },
-        {
-            "id": 2,
-            "type": "Food"
-        },
-        {
-            "id": 3,
-            "type": "Health"
         }
     ]
 

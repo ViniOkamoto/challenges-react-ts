@@ -9,25 +9,55 @@ import {
 } from './styles'
 import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import SelectInput from './components/select-input'
+import { useForm } from 'react-hook-form'
 
 const newTransactionSchema = zod.object({
   description: zod.string().min(1, 'Please write the transaction description'),
-  price: zod.number().positive('Please inform a value more than 0'),
+  price: zod.number(),
   category: zod.string(),
   type: zod.enum(['income', 'outcome']),
 })
+
+type NewTransactionFormInputs = zod.infer<typeof newTransactionSchema>
+
 export default function NewTransactionModal() {
+  const newTransactionForm = useForm<NewTransactionFormInputs>({
+    resolver: zodResolver(newTransactionSchema),
+  })
+  async function handleCreateNewTransaction(data: NewTransactionFormInputs) {
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+
+    console.log(data)
+  }
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid, isSubmitting },
+  } = newTransactionForm
   return (
     <Dialog.Portal>
       <Overlay />
       <Content>
         <Dialog.Title>New Transaction</Dialog.Title>
-        <form action="">
-          <input type="text" placeholder="Description" required />
-          <input type="number" placeholder="Price" required />
-          <SelectInput />
-
+        <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
+          <input
+            type="text"
+            placeholder="Description"
+            required
+            {...register('description')}
+          />
+          <input
+            type="number"
+            placeholder="Price"
+            required
+            {...register('price', { valueAsNumber: true })}
+          />
+          <input
+            type="text"
+            placeholder="Category"
+            required
+            {...register('category')}
+          />
           <TransactionTypeContainer>
             <TransactionTypeButton value="income" variant="income">
               <ArrowCircleUp size={24} />
@@ -38,7 +68,9 @@ export default function NewTransactionModal() {
               Outcome
             </TransactionTypeButton>
           </TransactionTypeContainer>
-          <button type="submit">Register</button>
+          <button type="submit" disabled={isSubmitting || !isValid}>
+            Register
+          </button>
         </form>
         <CloseButton>
           <X size={24} />
