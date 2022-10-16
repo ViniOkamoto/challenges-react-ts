@@ -22,5 +22,21 @@
             "price": 14000,
             "createdAt": "2022-10-14T13:09:30.832Z"
         }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "type": "Business"
+        },
+        {
+            "id": 2,
+            "type": "Food"
+        },
+        {
+            "id": 3,
+            "type": "Health"
+        }
     ]
+
+   
 }

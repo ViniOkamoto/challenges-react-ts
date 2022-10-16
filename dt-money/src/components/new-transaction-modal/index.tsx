@@ -7,7 +7,16 @@ import {
   TransactionTypeButton,
   TransactionTypeContainer,
 } from './styles'
+import * as zod from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import SelectInput from './components/select-input'
 
+const newTransactionSchema = zod.object({
+  description: zod.string().min(1, 'Please write the transaction description'),
+  price: zod.number().positive('Please inform a value more than 0'),
+  category: zod.string(),
+  type: zod.enum(['income', 'outcome']),
+})
 export default function NewTransactionModal() {
   return (
     <Dialog.Portal>
@@ -17,7 +26,7 @@ export default function NewTransactionModal() {
         <form action="">
           <input type="text" placeholder="Description" required />
           <input type="number" placeholder="Price" required />
-          <input type="text" placeholder="Category" required />
+          <SelectInput />
 
           <TransactionTypeContainer>
             <TransactionTypeButton value="income" variant="income">
