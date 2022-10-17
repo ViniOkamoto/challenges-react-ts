@@ -9,31 +9,37 @@ import {
 } from './styles'
 import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 
 const newTransactionSchema = zod.object({
   description: zod.string().min(1, 'Please write the transaction description'),
   price: zod.number(),
-  category: zod.string(),
+  category: zod.string().min(1, 'Please enter the transaction category'),
   type: zod.enum(['income', 'outcome']),
 })
 
 type NewTransactionFormInputs = zod.infer<typeof newTransactionSchema>
 
 export default function NewTransactionModal() {
-  const newTransactionForm = useForm<NewTransactionFormInputs>({
+  const {
+    control,
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isValid, isSubmitting },
+  } = useForm<NewTransactionFormInputs>({
+    mode: 'onChange',
     resolver: zodResolver(newTransactionSchema),
+    defaultValues: {
+      type: 'income',
+    },
   })
   async function handleCreateNewTransaction(data: NewTransactionFormInputs) {
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
     console.log(data)
+    reset()
   }
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isValid, isSubmitting },
-  } = newTransactionForm
   return (
     <Dialog.Portal>
       <Overlay />
@@ -58,16 +64,28 @@ export default function NewTransactionModal() {
             required
             {...register('category')}
           />
-          <TransactionTypeContainer>
-            <TransactionTypeButton value="income" variant="income">
-              <ArrowCircleUp size={24} />
-              Income
-            </TransactionTypeButton>
-            <TransactionTypeButton value="outcome" variant="outcome">
-              <ArrowCircleDown size={24} />
-              Outcome
-            </TransactionTypeButton>
-          </TransactionTypeContainer>
+
+          <Controller
+            control={control}
+            name="type"
+            render={({ field }) => {
+              return (
+                <TransactionTypeContainer
+                  onValueChange={field.onChange}
+                  value={field.value}
+                >
+                  <TransactionTypeButton value="income" variant="income">
+                    <ArrowCircleUp size={24} />
+                    Income
+                  </TransactionTypeButton>
+                  <TransactionTypeButton value="outcome" variant="outcome">
+                    <ArrowCircleDown size={24} />
+                    Outcome
+                  </TransactionTypeButton>
+                </TransactionTypeContainer>
+              )
+            }}
+          />
           <button type="submit" disabled={isSubmitting || !isValid}>
             Register
           </button>
