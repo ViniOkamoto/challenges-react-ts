@@ -5,15 +5,23 @@
             "description": "Site Development",
             "type": "outcome",
             "category":"Business",
-            "price": 11000,
+            "price": 2000,
             "createdAt": "2022-10-14T13:09:30.832Z"
         },
         {
             "id": 2,
-            "description": "Site Development",
+            "description": "Creation of UI Desgin",
             "type": "income",
-            "category": "Business",
-            "price": 14000,
+            "category":"Business",
+            "price": 1300,
+            "createdAt": "2022-10-14T13:09:30.832Z"
+        },
+        {
+            "id": 3,
+            "description": "Skip the dishes meal",
+            "type": "outcome",
+            "category": "Food",
+            "price": 40,
             "createdAt": "2022-10-14T13:09:30.832Z"
         }
     ]
