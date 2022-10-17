@@ -1,30 +1,60 @@
 {
-    "transactions": [
-        {
-            "id": 1,
-            "description": "Site Development",
-            "type": "outcome",
-            "category":"Business",
-            "price": 2000,
-            "createdAt": "2022-10-14T13:09:30.832Z"
-        },
-        {
-            "id": 2,
-            "description": "Creation of UI Desgin",
-            "type": "income",
-            "category":"Business",
-            "price": 1300,
-            "createdAt": "2022-10-14T13:09:30.832Z"
-        },
-        {
-            "id": 3,
-            "description": "Skip the dishes meal",
-            "type": "outcome",
-            "category": "Food",
-            "price": 40,
-            "createdAt": "2022-10-14T13:09:30.832Z"
-        }
-    ]
-
-   
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Site Development",
+      "type": "outcome",
+      "category": "Business",
+      "price": 2000,
+      "createdAt": "2022-10-14T13:09:30.832Z"
+    },
+    {
+      "id": 2,
+      "description": "Creation of UI Desgin",
+      "type": "income",
+      "category": "Business",
+      "price": 1300,
+      "createdAt": "2022-10-14T13:09:30.832Z"
+    },
+    {
+      "id": 3,
+      "description": "Skip the dishes meal",
+      "type": "outcome",
+      "category": "Food",
+      "price": 40,
+      "createdAt": "2022-10-14T13:09:30.832Z"
+    },
+    {
+      "description": "Setup upgrade",
+      "price": 1124,
+      "category": "Personal",
+      "type": "outcome",
+      "createdAt": "2022-10-17T00:25:07.073Z",
+      "id": 4
+    },
+    {
+      "description": "Clean code book",
+      "price": 12,
+      "category": "Personal",
+      "type": "outcome",
+      "createdAt": "2022-10-17T00:28:12.397Z",
+      "id": 5
+    },
+    {
+      "description": "App Development",
+      "price": 2400,
+      "category": "Business",
+      "type": "income",
+      "createdAt": "2022-10-17T00:29:56.723Z",
+      "id": 6
+    },
+    {
+      "description": "Coffee at Tim Hortons",
+      "price": 10,
+      "category": "Food",
+      "type": "outcome",
+      "createdAt": "2022-10-17T00:31:27.317Z",
+      "id": 7
+    }
+  ]
 }

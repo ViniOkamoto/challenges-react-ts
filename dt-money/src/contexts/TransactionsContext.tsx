@@ -5,6 +5,7 @@ import Transaction from '../models/transaction'
 interface TransactionsContextType {
   transactions: Transaction[]
   getTransactions: (query?: string) => void
+  createNewTransaction: (data: Transaction) => void
 }
 
 export const TransactionContext = createContext<TransactionsContextType>(
@@ -22,17 +23,26 @@ export default function TransactionsContext({
   async function getTransactions(query?: string) {
     const response = await api.get('transactions', {
       params: {
+        _sort: 'createdAt',
+        _order: 'desc',
         q: query,
       },
     })
     setTransactions(response.data)
+  }
+
+  async function createNewTransaction(data: Transaction) {
+    const response = await api.post('transactions', data)
+    setTransactions((state) => [response.data, ...state])
   }
   useEffect(() => {
     getTransactions()
   }, [])
 
   return (
-    <TransactionContext.Provider value={{ transactions, getTransactions }}>
+    <TransactionContext.Provider
+      value={{ transactions, getTransactions, createNewTransaction }}
+    >
       {children}
     </TransactionContext.Provider>
   )

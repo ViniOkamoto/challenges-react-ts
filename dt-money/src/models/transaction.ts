@@ -1,5 +1,5 @@
 export default interface Transaction {
-  id: number
+  id?: number
   description: string
   type: 'income' | 'outcome'
   category: string
