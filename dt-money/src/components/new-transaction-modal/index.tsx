@@ -11,7 +11,7 @@ import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, useForm } from 'react-hook-form'
 import { TransactionContext } from '../../contexts/TransactionsContext'
-import { useContext } from 'react'
+import { useContextSelector } from 'use-context-selector'
 
 const newTransactionSchema = zod.object({
   description: zod.string().min(1, 'Please write the transaction description'),
@@ -36,7 +36,10 @@ export default function NewTransactionModal() {
       type: 'income',
     },
   })
-  const { createNewTransaction } = useContext(TransactionContext)
+  const createNewTransaction = useContextSelector(
+    TransactionContext,
+    (context) => context.createNewTransaction,
+  )
   async function handleCreateNewTransaction(data: NewTransactionFormInputs) {
     // await new Promise((resolve) => setTimeout(resolve, 2000))
     createNewTransaction({ ...data, createdAt: new Date().toISOString() })

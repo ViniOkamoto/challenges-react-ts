@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContextSelector } from 'use-context-selector'
 import { TransactionContext } from '../../contexts/TransactionsContext'
 import { dateFormatter, priceFormatter } from '../../core/utils/formatters'
 import SearchForm from '../search-form'
@@ -9,7 +9,9 @@ import {
 } from './styles'
 
 export default function TransactionSection() {
-  const { transactions } = useContext(TransactionContext)
+  const transactions = useContextSelector(TransactionContext, (context) => {
+    return context.transactions
+  })
   return (
     <TranscationContainer>
       <SearchForm />
