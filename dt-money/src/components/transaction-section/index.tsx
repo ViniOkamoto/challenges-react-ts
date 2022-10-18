@@ -1,12 +1,12 @@
 import SearchForm from '../search-form'
-import TransactionTable from './components/transaction-table'
+import Transactions from './components/transactions'
 import { TranscationContainer } from './styles'
 
 export default function TransactionSection() {
   return (
     <TranscationContainer>
       <SearchForm />
-      <TransactionTable />
+      <Transactions />
     </TranscationContainer>
   )
 }
