@@ -5,11 +5,11 @@ export const HeaderContainer = styled.header`
   padding: 2.5rem 0 7.5rem;
 `
 
-export const HeaderContent = styled.div`
-  width: 100%;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+export const HeaderContent = styled.div.attrs({ className: 'wrapper' })`
+  img {
+    max-width: 117px;
+    width: 100%;
+  }
 
   display: flex;
   justify-content: space-between;
