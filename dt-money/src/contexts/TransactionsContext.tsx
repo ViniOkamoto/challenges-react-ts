@@ -39,7 +39,7 @@ export default function TransactionsContext({
 
   useEffect(() => {
     getTransactions()
-  }, [])
+  }, [getTransactions])
 
   return (
     <TransactionContext.Provider

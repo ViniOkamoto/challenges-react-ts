@@ -1,3 +1,8 @@
+import * as zod from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useContextSelector } from 'use-context-selector'
+import { Controller, useForm } from 'react-hook-form'
+import { TransactionContext } from '../../contexts/TransactionsContext'
 import * as Dialog from '@radix-ui/react-dialog'
 import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react'
 import {
@@ -7,11 +12,6 @@ import {
   TransactionTypeButton,
   TransactionTypeContainer,
 } from './styles'
-import * as zod from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Controller, useForm } from 'react-hook-form'
-import { TransactionContext } from '../../contexts/TransactionsContext'
-import { useContextSelector } from 'use-context-selector'
 
 const newTransactionSchema = zod.object({
   description: zod.string().min(1, 'Please write the transaction description'),
