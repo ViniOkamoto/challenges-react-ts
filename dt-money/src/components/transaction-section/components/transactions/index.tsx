@@ -12,6 +12,7 @@ import { useContextSelector } from 'use-context-selector'
 import { TransactionContext } from '../../../../contexts/TransactionsContext'
 import { useEffect, useState } from 'react'
 import { CalendarBlank, TagSimple } from 'phosphor-react'
+import TransactionPagination from '../transaction-pagination'
 
 export default function Transactions() {
   const [isDesktop, setDesktop] = useState(window.innerWidth > 650)
@@ -76,6 +77,7 @@ export default function Transactions() {
           ))}
         </div>
       )}
+      <TransactionPagination />
     </TransactionContainer>
   )
 }
