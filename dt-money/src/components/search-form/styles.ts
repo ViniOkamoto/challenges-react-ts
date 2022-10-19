@@ -41,4 +41,10 @@ export const SearchFormContainer = styled.form`
       opacity: 0.3;
     }
   }
+
+  @media (max-width: 650px) {
+    button span {
+      display: none;
+    }
+  }
 `
