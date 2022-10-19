@@ -1,61 +1,41 @@
+import styled from 'styled-components'
 import * as Dialog from '@radix-ui/react-dialog'
 import * as RadioGroup from '@radix-ui/react-radio-group'
 
-import styled from 'styled-components'
+export const TransactionFormContainer = styled.form`
+  margin-top: 2rem;
 
-export const Overlay = styled(Dialog.Overlay)`
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
-export const Content = styled(Dialog.Content)`
-  min-width: 32rem;
-  border-radius: 6px;
-  padding: 2.5rem 3rem;
-  background: ${({ theme }) => theme.color['gray-800']};
+  input {
+    width: 100%;
+    border-radius: 6px;
+    border: 0;
+    background: ${({ theme }) => theme.color['gray-900']};
+    color: ${({ theme }) => theme.color['gray-300']};
+    padding: 1rem;
 
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  form {
-    margin-top: 2rem;
-
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    input {
-      border-radius: 6px;
-      border: 0;
-      background: ${({ theme }) => theme.color['gray-900']};
-      color: ${({ theme }) => theme.color['gray-300']};
-      padding: 1rem;
-
-      &::placeholder {
-        color: ${({ theme }) => theme.color['gray-500']};
-      }
+    &::placeholder {
+      color: ${({ theme }) => theme.color['gray-500']};
     }
-    button[type='submit'] {
-      height: 58px;
-      border: 0;
-      background: ${({ theme }) => theme.color['green-500']};
-      color: ${({ theme }) => theme.color.white};
-      font-weight: bold;
-      padding: 0 1.25rem;
-      border-radius: 6px;
-      cursor: pointer;
-      &:disabled {
-        opacity: 0.5;
-      }
-      &:hover {
-        background: ${({ theme }) => theme.color['green-700']};
-        transition: background-color 0.2s;
-      }
+  }
+  button[type='submit'] {
+    height: 58px;
+    border: 0;
+    background: ${({ theme }) => theme.color['green-500']};
+    color: ${({ theme }) => theme.color.white};
+    font-weight: bold;
+    padding: 0 1.25rem;
+    border-radius: 6px;
+    cursor: pointer;
+    &:disabled {
+      opacity: 0.5;
+    }
+    &:hover {
+      background: ${({ theme }) => theme.color['green-700']};
+      transition: background-color 0.2s;
     }
   }
 `
