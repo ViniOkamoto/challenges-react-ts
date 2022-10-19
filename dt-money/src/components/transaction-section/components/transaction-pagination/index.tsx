@@ -20,8 +20,9 @@ export default function TransactionPagination() {
   }
 
   const pageNumbers = getPaginationNumbers()
+
   function getPaginationNumbers() {
-    if (pagination.last < 3 || pagination.current < 3) {
+    if (pagination.last <= 3 || pagination.current < 3) {
       return Array.from({ length: pagination.last }, (_, i) => i + 1)
     }
     if (pagination.next === 0) {
@@ -51,7 +52,6 @@ export default function TransactionPagination() {
             key={key}
             disabled={key === pagination.current}
             onClick={() => {
-              console.log(key)
               handleOnClickPage(key)
             }}
           >

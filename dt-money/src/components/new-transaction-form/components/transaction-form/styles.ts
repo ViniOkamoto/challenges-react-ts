@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import * as Dialog from '@radix-ui/react-dialog'
 import * as RadioGroup from '@radix-ui/react-radio-group'
 
+export const TransactionFormWrapper = styled.div``
 export const TransactionFormContainer = styled.form`
   margin-top: 2rem;
 

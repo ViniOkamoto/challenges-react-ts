@@ -37,21 +37,32 @@ export default function TransactionsContext({
   const [pagination, setPagination] = useState<PaginationInterface>({
     current: 1,
     first: 1,
-    next: 1,
-    prev: 1,
+    next: 0,
+    prev: 0,
     last: 1,
   })
+  let query = ''
 
   const extractPagination = useCallback(
     (response: AxiosResponse<any, any>, currentPage: number) => {
-      const paginationObject = parseLinkHeader(response.headers.link as string)
-
+      if (response.headers.link as string) {
+        const paginationObject = parseLinkHeader(
+          response.headers.link as string,
+        )
+        return setPagination({
+          current: currentPage,
+          first: getPageNumber(paginationObject.first),
+          next: getPageNumber(paginationObject.next),
+          prev: getPageNumber(paginationObject.prev),
+          last: getPageNumber(paginationObject.last),
+        })
+      }
       setPagination({
         current: currentPage,
-        first: getPageNumber(paginationObject.first),
-        next: getPageNumber(paginationObject.next),
-        prev: getPageNumber(paginationObject.prev),
-        last: getPageNumber(paginationObject.last),
+        first: 1,
+        next: 0,
+        prev: 0,
+        last: 1,
       })
     },
     [],
@@ -59,11 +70,14 @@ export default function TransactionsContext({
 
   const getTransactions = useCallback(
     async ({ q, page = 1 }: ApiParams) => {
+      if (q !== undefined) {
+        query = q
+      }
       const response = await api.get('transactions', {
         params: {
           _sort: 'createdAt',
           _order: 'desc',
-          q,
+          q: query,
           _page: page,
           _limit: 10,
         },
@@ -103,6 +117,7 @@ export default function TransactionsContext({
 
   useEffect(() => {
     getTransactions({})
+    console.log('nem fodendo')
   }, [getTransactions])
 
   return (

@@ -7,6 +7,7 @@ import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react'
 import {
   CloseButton,
   TransactionFormContainer,
+  TransactionFormWrapper,
   TransactionTypeButton,
   TransactionTypeContainer,
 } from './styles'
@@ -44,8 +45,11 @@ export default function TransactionForm() {
     reset()
   }
   return (
-    <>
+    <TransactionFormWrapper>
       <Dialog.Title>New Transaction</Dialog.Title>
+      <CloseButton>
+        <X size={24} />
+      </CloseButton>
       <TransactionFormContainer
         onSubmit={handleSubmit(handleCreateNewTransaction)}
       >
@@ -93,9 +97,6 @@ export default function TransactionForm() {
           Register
         </button>
       </TransactionFormContainer>
-      <CloseButton>
-        <X size={24} />
-      </CloseButton>
-    </>
+    </TransactionFormWrapper>
   )
 }

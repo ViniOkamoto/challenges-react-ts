@@ -26,8 +26,7 @@ export default function SearchForm() {
   })
 
   async function handleSearchTransaction(data: SearchFormType) {
-    // await new Promise((resolve) => setTimeout(resolve, 2000))
-    getTransactions(data.query)
+    getTransactions({ q: data.query, page: 1 })
   }
   return (
     <SearchFormContainer onSubmit={handleSubmit(handleSearchTransaction)}>

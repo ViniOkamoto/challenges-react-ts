@@ -13,6 +13,5 @@ export default function NewTransactionForm() {
     window.addEventListener('resize', updateMedia)
     return () => window.removeEventListener('resize', updateMedia)
   })
-  console.log(isDesktop)
   return isDesktop ? <Modal /> : <BottomSheet />
 }
