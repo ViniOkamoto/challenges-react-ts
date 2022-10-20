@@ -38,8 +38,8 @@ Firstly, you will need [NPM 8.15.0](https://www.npmjs.com/) in your machine
 
 Clone this repository and navigate to the project directory
 ```bash
-$ git clone https://github.com/viniokamoto/ignite-timer.git
-$ cd ignite-timer
+$ git clone https://github.com/ViniOkamoto/challenges-react-ts.git
+$ cd challenges-react-ts/coffe-delivery
 ```
 Para iniciá-lo, siga os passos abaixo:
 ```bash
