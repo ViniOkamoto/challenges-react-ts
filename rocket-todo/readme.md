@@ -1,50 +1,51 @@
-<div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="readme-resources/logo.svg" alt="Todo Rocket" width="80" height="80">
-  </a>
 
-  <h3 align="center">Rocket Todo</h3>
-
-  <p align="center">
-    A simple TODO list for study purposes.
-    <br />
-  </p>
+<div align='center'>
+        <img src="./readme-resources/cover.gif" alt="Logo"/>
 </div>
 
-## About The Project
-<img src ="readme-resources/preview.gif" height="600em"/>
+<h1 align='center'>
+    Rocket Todo
+</h1>
 
-## Built With
-[![React][React.js]][React-url]
-## FIGMA LINK
-https://www.figma.com/file/l0qA6YL1znn44rcdrTA1VS/ToDo-List-Challenge?node-id=56%3A96
 
-## Features
-
+ # 💻 Project
+ 
+A simple TODO list which you can create, remove and organize your todos
+ 
+ # 🧩 Features
 - Create, Delete and Organize TODOS
 - Mobile and Web responsive
 - Toast Notifiers
 
+ # 🧪 Technologies
 
-## Learnings
-
-- Improved css and html knowledge
-- Improved knowledge on React Components
-- Learning on React state hook
-- Learning on package react-toastify
-- Learning on manipulation of props
-- Improved best practices
+This project was developed using the following technologies:
+- [ReactJS](https://pt-br.reactjs.org/);
+- [ViteJS](https://vitejs.dev/);
+- [Typescript](https://www.typescriptlang.org/);
 
 
-## Install
+# 🚀 How to install
+Firstly, you will need [NPM 8.15.0](https://www.npmjs.com/) in your machine
 
-firstly you will need [NPM 8.15.0](https://www.npmjs.com/) in your machine
-
+Clone this repository and navigate to the project directory
 ```bash
-  npm install
-  npm run dev
+$ git clone https://github.com/ViniOkamoto/challenges-react-ts.git
+$ cd challenges-react-ts/rocket-todo
 ```
-after this you need your browser on the link provided in the terminal.
+To start the web app, follow the instructions below:
+```bash
+# To install the dependencies
+$ npm i
 
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
+# run the project in develop mode
+$ npm run dev
+```
+
+After this you need to open your browser on the link provided in the terminal.
+
+# 🎨 Layout
+- [Figma](https://www.figma.com/file/l0qA6YL1znn44rcdrTA1VS/ToDo-List-Challenge?node-id=56%3A964)
+
+# 📃 License
+[MIT](https://choosealicense.com/licenses/mit/)
