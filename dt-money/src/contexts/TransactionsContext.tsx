@@ -117,7 +117,6 @@ export default function TransactionsContext({
 
   useEffect(() => {
     getTransactions({})
-    console.log('nem fodendo')
   }, [getTransactions])
 
   return (
