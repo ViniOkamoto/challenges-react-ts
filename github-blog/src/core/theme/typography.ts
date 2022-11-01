@@ -11,7 +11,7 @@ export const AppFont = styled.p<TextProps>`
     props.fontWeight
       ? props.theme.typography.font.weight[`${props.fontWeight}`]
       : props.theme.typography.font.weight.regular};
-  line-height: ${(props) => props.theme.typography['line-height-130']};
+  line-height: ${({ theme }) => theme.typography['line-height-160']};
   color: ${(props) =>
     props.color
       ? props.theme.color[`${props.color}`]
@@ -20,13 +20,17 @@ export const AppFont = styled.p<TextProps>`
 
 export const TitleL = styled(AppFont)`
   font-size: ${({ theme }) => theme.typography.title.l};
+  font-weight: ${({ theme }) => theme.typography.font.weight.bold};
+  line-height: ${({ theme }) => theme.typography['line-height-130']};
 `
 
 export const TitleM = styled(AppFont)`
   font-size: ${({ theme }) => theme.typography.title.m};
+  font-weight: ${({ theme }) => theme.typography.font.weight.bold};
 `
 export const TitleS = styled(AppFont)`
   font-size: ${({ theme }) => theme.typography.title.s};
+  font-weight: ${({ theme }) => theme.typography.font.weight.bold};
 `
 
 export const TextM = styled(AppFont)`

@@ -1,3 +1,10 @@
+import ProfileSection from './components/profile-section'
+import { HomeContainer } from './styles'
+
 export default function Home() {
-  return <h1>Home</h1>
+  return (
+    <HomeContainer>
+      <ProfileSection />
+    </HomeContainer>
+  )
 }
